@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.library">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Library">
+        <activity
+            android:name=".ChiTietSach"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+        android:name=".TroGiup"
+        android:exported="false"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".XemThem"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:label="Sách xem nhiều nhất"/>
+        <activity
+            android:name=".QuenMatKhau3"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".QuenMatKhau2"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".DangNhap"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DangKy"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".QuenMatKhau"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ThongBao"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".TrangChu"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".DanhMucSach"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".CaiDat"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="Trang cá nhân"
+            android:parentActivityName=".CaiDat"/>
+        <activity
+            android:name=".Thongtincanhan"
+            android:exported="false"
+            android:label="Thông tin cá nhân"
+            android:parentActivityName=".TrangChu"/>
+        <activity
+            android:name=".ChinhSua"
+            android:exported="false" />
+        <activity
+            android:name=".DanhSachYeuThich"
+            android:exported="false"
+            android:label="Danh sách yêu thích" />
+        <activity
+            android:name=".DanhSachCho"
+            android:exported="false"
+            android:label="Danh sách chờ" />
+        <activity
+            android:name=".Lichsu"
+            android:exported="false"
+            android:label="Lịch sử" />
+        <activity
+            android:name=".Muon"
+            android:exported="false"
+            android:label="Mượn sách" />
+        <activity
+            android:name=".XacNhanMuon"
+            android:exported="false"
+            android:label="Mượn sách" />
+        <activity
+            android:name=".Giahan"
+            android:exported="false"
+            android:label="Gia hạn" />
+        <activity
+            android:name=".XacNhanGiaHan"
+            android:exported="false"
+            android:label="Gia hạn" />
+        <activity
+            android:name=".GioiThieu"
+            android:exported="false"
+            android:label="Gia hạn"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".NhacNho"
+            android:exported="false"
+            android:label="Gia hạn"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".DoiMatKhau"
+            android:exported="false"
+            android:label="Gia hạn"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".TaoMKMoi"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+</manifest>

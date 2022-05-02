@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backrough"
+    tools:context=".DoiMatKhau2">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        android:background="#F3F0F0"
+        app:srcCompat="@mipmap/logo_foreground" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="331dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_khungmatkhau"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Tạo mới mật khẩu"
+            android:textAlignment="center"
+            android:textColor="#3E70F7"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="293dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:text="Mật khẩu mới bạn nên tạo khác những mật khẩu đã từng sử dụng."
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/signupEmail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableEnd="@drawable/ic_eye"
+            android:drawablePadding="20dip"
+            android:ems="10"
+            android:hint="Tạo mới mật khẩu"
+            android:inputType="numberPassword"
+            android:paddingLeft="30dp"
+            android:paddingEnd="20dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/inputEmail3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableEnd="@drawable/ic_eye"
+            android:drawablePadding="20dip"
+            android:ems="10"
+            android:hint="Xác nhận mật khẩu"
+            android:inputType="numberPassword"
+            android:paddingLeft="30dp"
+            android:paddingEnd="20dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+
+
+
+            <Button
+                android:id="@+id/btnCD_DoiMatKhau"
+                android:layout_width="318dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/bg_matkhau"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:text="Gửi email"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Đổi mật khẩu" />
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

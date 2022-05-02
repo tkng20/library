@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TroGiup">
+
+    <ImageView
+        android:id="@+id/slide_image"
+        android:layout_width="230dp"
+        android:layout_height="204dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="88dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="HEADING"
+        android:textColor="#3E70F7"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/slide_desc"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_image"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/nunito_sans_extralight"
+        android:gravity="center"
+        android:text="Sau khi bạn đã mượn sách thành công. Bạn hãy đến địa chỉ sau đây để nhận sách. Tòa nhà A phòng 113, thư viện trường đại học thông tin."
+        android:textColor="#675D5D" />
+
+</RelativeLayout>

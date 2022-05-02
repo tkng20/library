@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="365dp"
+        android:layout_height="222dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F2F8FD"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Thông tin cá nhân"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:icon="@drawable/ic_thongtincanhan"
+            app:iconGravity="start"
+            app:iconPadding="20dp"
+            app:iconSize="30dp"
+            app:iconTint="#2979FF" />
+
+        <Button
+            android:id="@+id/btnDSYT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F2F8FD"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Danh sách yêu thích"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:icon="@drawable/ic_danhsachyeuthic"
+            app:iconGravity="start"
+            app:iconPadding="20dp"
+            app:iconSize="30dp"
+            app:iconTint="#FF3D00" />
+
+        <Button
+            android:id="@+id/btnLichSu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F2F8FD"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Lịch sử"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:icon="@drawable/ic_lichsu"
+            app:iconGravity="start"
+            app:iconPadding="20dp"
+            app:iconSize="30dp"
+            app:iconTint="#2979FF" />
+
+        <Button
+            android:id="@+id/btnDangXuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F2F8FD"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Đăng xuất"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:icon="@drawable/ic_dangxuat"
+            app:iconGravity="start"
+            app:iconPadding="20dp"
+            app:iconSize="30dp"
+            app:iconTint="#FF3D00" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="363dp"
+        android:layout_height="289dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtDenHan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="284dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Đến hạn"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
+            android:adjustViewBounds="false"
+            android:background="#3E70F7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="66dp"
+            app:srcCompat="@drawable/avatar" />
+
+        <Button
+            android:id="@+id/btnChinhSua"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="122dp"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="#00268D"
+            android:text="Chỉnh sửa"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="164dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:includeFontPadding="true"
+            android:text="HaLinh"
+            android:textColor="#3E4685"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="210dp"
+            app:srcCompat="@drawable/choxacnhan"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtCXN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:includeFontPadding="false"
+            android:text="Chờ xác nhận"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="127dp"
+            android:layout_marginTop="210dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/dangmuon" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="210dp"
+            android:layout_marginEnd="114dp"
+            app:srcCompat="@drawable/damuon" />
+
+        <TextView
+            android:id="@+id/txtDangMuon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="111dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Đang mượn"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtDaMuon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="206dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Đã mượn"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="43dp"
+            app:srcCompat="@drawable/denhan" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="88dp"
+            android:layout_height="77dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="1dp"
+            app:srcCompat="@drawable/cover" />
+
+        <ImageView
+            android:id="@+id/imgCaiDat"
+            android:layout_width="26dp"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/setting" />
+
+        <ImageView
+            android:id="@+id/imgDSC"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="43dp"
+            app:srcCompat="@drawable/wait"
+            tools:ignore="ImageContrastCheck" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

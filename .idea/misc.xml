@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable-v24/viewmoreshadow.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/avaa_background.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/delete.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_back.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_search.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/round_bg_green.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/statusshadow.xml" value="0.2075" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/viewmore_shadow.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_caidat.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_caidatnhacnho.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_chitietsach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_dangky.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_dangnhap.xml" value="0.13846153846153847" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhmucsach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhmucsach_goc.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhsachcho.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhsachyeuthich.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_doimatkhau.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_giahan.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_gioithieu.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_lichsu.xml" value="0.125" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_muon.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_muon_2.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_taomkmoi.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_thongbao.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_thongtincanhan.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangcanhan.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu.xml" value="0.1" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu_goc.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhangiahan.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhanmuon.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhanmuon2.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xemthem.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activiy_chinhsua.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activiy_danhmucsach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/add_post.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/chi_tiet_sach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/danhmucsach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/fragment_choxacnhan.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_book.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_post.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_sachmuonnhieu.xml" value="0.3333333333333333" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main_tro_giup.xml" value="0.1" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/post_activity.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_01.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_02.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_03.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test2.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test_dms.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test_trangchu.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/thong_bao.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/tro_giup.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/viewmore_nhieu_nhat.xml" value="0.16666666666666666" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/drawable/ic_email_background.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/drawable/ic_vector (2).xml" value="0.2075" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/drawable/ic_vector.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/font/andika_new_basic_bold.xml" value="0.23020833333333332" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/font/nunito.xml" value="0.23020833333333332" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/font/nunito_sans_bold.xml" value="0.10677083333333333" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout-v31/dang_nhap.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_cai_dat2.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_caidat.xml" value="0.125" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_caidatnhacnho.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_dangky.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_dangnhap.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_danhsachcho.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_doi_mat_khau2.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_doimatkhau.xml" value="0.125" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_main (2).xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_muon.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_set_time.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_thongtincanhan.xml" value="0.1" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activity_trangcanhan.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/activiy_chinhsua.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/chi_tiet_sach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/dang_nhap.xml" value="0.1" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/danhmucsach.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/doimatkhau.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/fragment_denhan.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/gioi_thieu.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/home.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/quen_mat_khau_01.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/quen_mat_khau_02.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/quen_mat_khau_03.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/settime.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/tao_tai_khoan.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/thong_bao.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/layout/viewmore_nhieu_nhat.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/activity_cai_dat2.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/activity_doi_mat_khau2.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/activity_home.xml" value="0.1308876811594203" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/activity_main2.xml" value="0.1308876811594203" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/activity_set_time.xml" value="0.1308876811594203" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/danhmucsach.xml" value="0.1308876811594203" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/doimatkhau.xml" value="0.1308876811594203" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/home.xml" value="0.1308876811594203" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/settime.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi/app/src/main/res/layout/text.xml" value="0.1308876811594203" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/drawable/chuyennganh.xml" value="0.1" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/drawable/online.xml" value="0.1" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/activity_cai_dat2.xml" value="0.264" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/activity_doi_mat_khau2.xml" value="0.1403985507246377" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/activity_home.xml" value="0.1403985507246377" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/activity_main2.xml" value="0.1403985507246377" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/activity_set_time.xml" value="0.1403985507246377" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/danhmucsach.xml" value="0.2" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/doimatkhau.xml" value="0.264" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/home.xml" value="0.176" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/settime.xml" value="0.264" />
+        <entry key="..\:/Nam3hk2/Mobile/ThuVien2/app/src/main/res/layout/text.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

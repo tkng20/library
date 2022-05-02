@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/numans</item>
+        <item>@font/nunito_sans_extralight</item>
+        <item>@font/baloo</item>
+        <item>@font/nunito_sans_extrabold</item>
+        <item>@font/andika_new_basic_bold</item>
+        <item>@font/nunito</item>
+        <item>@font/nunito_sans_bold</item>
+        <item>@font/nunito_sans_extralight</item>
+        <item>@font/nunito_sans_light</item>
+        <item>@font/poppins</item>
+        <item>@font/poppins_bold</item>
+    </array>
+</resources>
