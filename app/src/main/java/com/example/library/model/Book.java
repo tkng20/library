@@ -13,9 +13,6 @@ public class Book {
     private String ngayXB;
     private String moTa;
 
-    public Book() {
-    }
-
     public Book(int id, String tenSach, String tacGia, String theLoai, String soLuong, String soTrang, String ngayXuatBan, String moTa) {
         this.id = id;
         this.tenSach = tenSach;

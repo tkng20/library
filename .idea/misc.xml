@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable-v24/viewmoreshadow.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/avaa_background.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/book.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/delete.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_back.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_search.xml" value="0.165" />
@@ -42,9 +43,12 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/chi_tiet_sach.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/danhmucsach.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/fragment_choxacnhan.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/item_book.xml" value="0.17527173913043478" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/item_category.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_book.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_post.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_sachmuonnhieu.xml" value="0.3333333333333333" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_test.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main_tro_giup.xml" value="0.1" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/post_activity.xml" value="0.1331521739130435" />

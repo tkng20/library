@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangChu">
+
+    <RelativeLayout
+        android:layout_width="358dp"
+        android:layout_height="121dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:paddingRight="30dp"
+                android:shadowColor="#E3DCDC"
+                android:text="Hey, Ha Linh"
+                android:textColor="#3E70F7"
+                android:textSize="26sp"
+                android:translationY="12dp" />
+
+            <ImageView
+                android:id="@+id/imgTC_DanhSachCho"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="-20dp"
+                android:translationX="22dp"
+                android:translationY="10dp"
+                app:srcCompat="@drawable/book" />
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="111dp"
+                android:layout_height="85dp"
+                android:translationX="15dp"
+                android:translationY="-10dp"
+                app:srcCompat="@mipmap/avaa_foreground" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button21"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/round_backrough"
+            android:backgroundTint="#3E70F7"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:paddingStart="5dp"
+            android:textAllCaps="false"
+            android:translationX="270dp"
+            android:translationY="60dp"></androidx.appcompat.widget.AppCompatButton>
+
+        <EditText
+            android:id="@+id/editSearch3"
+
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+
+            android:background="@drawable/round_backrough"
+            android:backgroundTint="@color/timkiem"
+
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Tìm kiếm"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+
+
+            android:paddingLeft="15dp"
+            android:textAlignment="viewStart"
+            android:translationX="40dp"
+            android:translationY="60dp"
+            app:layout_constraintHorizontal_bias="0.444" />
+
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp">
+
+        <!-- Note: A RecyclerView can also be used -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp">
+
+            <!-- Scrollable content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="234dp"
+                    android:translationY="30dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnTC_GiaHan"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_below="@+id/editSearch2"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/border"
+                        android:backgroundTint="#61CDC1"
+                        android:drawableRight="@drawable/time"
+
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:shadowColor="#CFC3C3"
+                        android:text="Gia                                                           hạn"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"></androidx.appcompat.widget.AppCompatButton>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnTC_ChoXacNhan"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_below="@+id/editSearch2"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="120dp"
+                        android:background="@drawable/border"
+                        android:backgroundTint="#8E5AC5"
+                        android:drawableRight="@drawable/ic_baseline_bookmarks_24"
+                        android:paddingTop="10dp"
+
+                        android:paddingEnd="5dp"
+                        android:paddingRight="10dp"
+                        android:shadowColor="#CFC3C3"
+                        android:text="Chờ          xác nhận"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"></androidx.appcompat.widget.AppCompatButton>
+
+                    <View
+                        android:id="@+id/view18"
+                        android:layout_width="3dp"
+                        android:layout_height="60dp"
+                        android:layout_alignTop="@+id/button9"
+                        android:layout_marginLeft="192dp"
+                        android:layout_marginTop="25dp"
+                        android:background="#FFDE8B" />
+
+                    <View
+                        android:id="@+id/view13"
+                        android:layout_width="3dp"
+                        android:layout_height="60dp"
+                        android:layout_alignTop="@+id/button9"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="25dp"
+                        android:background="#07756B" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnTC_LichSu"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_below="@+id/editSearch2"
+                        android:layout_marginLeft="195dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/border"
+                        android:backgroundTint="#FDB501"
+                        android:drawableRight="@drawable/ic_baseline_menu_book_24"
+                        android:paddingTop="10dp"
+
+                        android:paddingRight="10dp"
+                        android:text="Lịch                Sử"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"></androidx.appcompat.widget.AppCompatButton>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/tc_TroGiup"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_below="@+id/editSearch2"
+                        android:layout_marginLeft="195dp"
+                        android:layout_marginTop="120dp"
+                        android:background="@drawable/border"
+                        android:backgroundTint="#FF5272"
+                        android:drawableRight="@drawable/ic_baseline_help_24"
+                        android:paddingTop="10dp"
+
+                        android:paddingRight="10dp"
+                        android:text="Trợ      giúp"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"></androidx.appcompat.widget.AppCompatButton>
+
+                    <View
+                        android:id="@+id/view19"
+                        android:layout_width="3dp"
+                        android:layout_height="60dp"
+                        android:layout_alignTop="@+id/button9"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="145dp"
+                        android:background="#DFD2D5" />
+
+                    <View
+                        android:id="@+id/view20"
+                        android:layout_width="3dp"
+                        android:layout_height="60dp"
+                        android:layout_alignTop="@+id/button9"
+                        android:layout_marginLeft="192dp"
+                        android:layout_marginTop="145dp"
+                        android:background="#F6C0CC" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/cn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sách mượn nhiều nhất"
+                    android:textColor="#3E70F7"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:translationX="20dp"
+                    android:translationY="35dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/viewmore"
+                    android:layout_width="80dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/viewmore_shadow"
+                    android:text="Xem thêm"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:translationX="250dp"
+                    android:translationY="10dp" />
+
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewHeader"
+                    android:text="Sách mới nhất"
+                    android:textColor="#3E70F7"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:translationX="20dp"
+                    android:translationY="-145dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button13"
+                    android:layout_width="80dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/viewmore_shadow"
+                    android:text="Xem thêm"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:translationX="250dp"
+                    android:translationY="-170dp" />
+
+                <TextView
+                    android:id="@+id/cn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sách chuyên ngành"
+                    android:textColor="#3E70F7"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:translationX="20dp"
+                    android:translationY="-308dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button14"
+                    android:layout_width="80dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/viewmore_shadow"
+                    android:text="Xem thêm"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:translationX="250dp"
+                    android:translationY="-330dp" />
+
+                <HorizontalScrollView
+                    android:id="@+id/keo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="355dp"
+                    android:fillViewport="true"
+                    android:translationY="-470dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="150dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/chuyennganh"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Hot"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/chuyennganh"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Hot"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/chuyennganh"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Hot"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/chuyennganh"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Hot"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/chuyennganh"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Hot"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/cn3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sách online"
+                    android:textColor="#3E70F7"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:translationX="20dp"
+                    android:translationY="-485dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button16"
+                    android:layout_width="80dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/viewmore_shadow"
+                    android:text="Xem thêm"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:translationX="250dp"
+                    android:translationY="-510dp" />
+
+                <HorizontalScrollView
+                    android:id="@+id/keo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:translationY="-650dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="150dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/online"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Online"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/online"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Online"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/online"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Online"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/online"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Online"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="175dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_backrough"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="160dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginRight="10dp">
+
+
+                                <ImageView
+                                    android:id="@+id/imageBook6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="109dp"
+                                    android:translationY="2dp"
+                                    app:srcCompat="@mipmap/bookss" />
+
+                                <TextView
+                                    android:id="@+id/tvGioiTinh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Sách kỹ năng"
+                                    android:translationY="130dp" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Lượt xem 100  |  Đã mượn 100"
+                                    android:textSize="11sp"
+                                    android:translationY="150dp" />
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="147dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="true"
+                                    android:paddingStart="-13dp"
+                                    android:text="Kỹ thuật lập trình"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:translationY="110dp" />
+
+                                <TextView
+                                    android:id="@+id/online2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/online"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="1dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Online"
+                                    android:textColor="#FFFFFF" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            app:backgroundTint="#3E70F7">
+
+            <ImageView
+                android:id="@+id/tc_btnHome"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="70dp"
+                android:background="@drawable/ic_home2" />
+
+            <ImageView
+                android:id="@+id/tc_btnNotice"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="70dp"
+                android:background="@drawable/ic_sharp_notifications"></ImageView>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tc_btnDiscover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/bottomAppBar"
+            app:srcCompat="@drawable/ic_baseline_explore" />
+
+        <HorizontalScrollView
+            android:id="@+id/keo2"
+
+            android:layout_width="match_parent"
+            android:layout_height="355dp"
+            android:layout_below="@id/keo3"
+            android:fillViewport="true"
+            android:translationY="-315dp"
+            app:layout_anchor="@+id/nestedScrollView"
+            app:layout_anchorGravity="top|center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="150dp"
+                android:background="#E0E6F6"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/round_backrough"
+                    android:backgroundTint="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageBook6"
+                            android:layout_width="match_parent"
+                            android:layout_height="109dp"
+                            android:translationY="-2dp"
+                            app:srcCompat="@mipmap/bookss" />
+
+                        <TextView
+                            android:id="@+id/tvGioiTinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Sách kỹ năng"
+                            android:textSize="13sp"
+                            android:translationY="133dp" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Lượt xem 100  |  Đã mượn 100"
+                            android:textSize="11sp"
+                            android:translationY="150dp" />
+
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F24439"
+                            android:fontFamily="sans-serif"
+                            android:includeFontPadding="true"
+                            android:paddingStart="0dp"
+                            android:text="Kỹ thuật lập trình"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:translationY="110dp" />
+
+                        <TextView
+                            android:id="@+id/online2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nhan_new"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="2dp"
+                            android:text="New"
+                            android:textColor="#FFFFFF" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/round_backrough"
+                    android:backgroundTint="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageBook6"
+                            android:layout_width="match_parent"
+                            android:layout_height="109dp"
+                            android:translationY="2dp"
+                            app:srcCompat="@mipmap/bookss" />
+
+                        <TextView
+                            android:id="@+id/tvGioiTinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Sách kỹ năng"
+                            android:textSize="13sp"
+                            android:translationY="133dp" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Lượt xem 100  |  Đã mượn 100"
+                            android:textSize="11sp"
+                            android:translationY="150dp" />
+
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F24439"
+                            android:fontFamily="sans-serif"
+                            android:includeFontPadding="true"
+                            android:paddingStart="0dp"
+                            android:text="Kỹ thuật lập trình"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:translationY="110dp" />
+
+                        <TextView
+                            android:id="@+id/online2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nhan_new"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="2dp"
+                            android:text="New"
+                            android:textColor="#FFFFFF" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/round_backrough"
+                    android:backgroundTint="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageBook6"
+                            android:layout_width="match_parent"
+                            android:layout_height="109dp"
+                            android:translationY="2dp"
+                            app:srcCompat="@mipmap/bookss" />
+
+                        <TextView
+                            android:id="@+id/tvGioiTinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Sách kỹ năng"
+                            android:textSize="13sp"
+                            android:translationY="133dp" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Lượt xem 100  |  Đã mượn 100"
+                            android:textSize="11sp"
+                            android:translationY="150dp" />
+
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F24439"
+                            android:fontFamily="sans-serif"
+                            android:includeFontPadding="true"
+                            android:paddingStart="0dp"
+                            android:text="Kỹ thuật lập trình"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:translationY="110dp" />
+
+                        <TextView
+                            android:id="@+id/online2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nhan_new"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="2dp"
+                            android:text="New"
+                            android:textColor="#FFFFFF" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/round_backrough"
+                    android:backgroundTint="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageBook6"
+                            android:layout_width="match_parent"
+                            android:layout_height="109dp"
+                            android:translationY="2dp"
+                            app:srcCompat="@mipmap/bookss" />
+
+                        <TextView
+                            android:id="@+id/tvGioiTinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Sách kỹ năng"
+                            android:textSize="13sp"
+                            android:translationY="133dp" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Lượt xem 100  |  Đã mượn 100"
+                            android:textSize="11sp"
+                            android:translationY="150dp" />
+
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F24439"
+                            android:fontFamily="sans-serif"
+                            android:includeFontPadding="true"
+                            android:paddingStart="0dp"
+                            android:text="Kỹ thuật lập trình"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:translationY="110dp" />
+
+                        <TextView
+                            android:id="@+id/online2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nhan_new"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="2dp"
+                            android:text="New"
+                            android:textColor="#FFFFFF" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/round_backrough"
+                    android:backgroundTint="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageBook6"
+                            android:layout_width="match_parent"
+                            android:layout_height="109dp"
+                            android:translationY="2dp"
+                            app:srcCompat="@mipmap/bookss" />
+
+                        <TextView
+                            android:id="@+id/tvGioiTinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Sách kỹ năng"
+                            android:textSize="13sp"
+                            android:translationY="133dp" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="Lượt xem 100  |  Đã mượn 100"
+                            android:textSize="11sp"
+                            android:translationY="150dp" />
+
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F24439"
+                            android:fontFamily="sans-serif"
+                            android:includeFontPadding="true"
+                            android:paddingStart="0dp"
+                            android:text="Kỹ thuật lập trình"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:translationY="110dp" />
+
+                        <TextView
+                            android:id="@+id/online2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nhan_new"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="2dp"
+                            android:text="New"
+                            android:textColor="#FFFFFF" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

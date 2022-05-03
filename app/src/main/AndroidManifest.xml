@@ -67,8 +67,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="Trang cá nhân"
-            android:parentActivityName=".CaiDat"/>
+            android:label="Trang cá nhân"/>
+<!--            android:parentActivityName=".CaiDat"-->
         <activity
             android:name=".Thongtincanhan"
             android:exported="false"

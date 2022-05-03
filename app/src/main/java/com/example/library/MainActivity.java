@@ -2,6 +2,7 @@ package com.example.library;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);;
         // View by id
         Button btnProfile = (Button) findViewById(R.id.btnProfile);
         Button btnChinhSua = (Button) findViewById(R.id.btnChinhSua);
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnChinhSua.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, ChinhSua.class);
+            Intent iSubActivity01 = new Intent(MainActivity.this, Thongtincanhan.class);
             startActivity(iSubActivity01);
         });
 
@@ -119,14 +120,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),DangNhap.class));
     }
 
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case android.R.id.home:
-                onBackPressed();
-                return true;
-            default:break;
-        }
-        return super.onOptionsItemSelected(item);
+                super.onBackPressed();
+                break;
+        } return true;
     }
 }

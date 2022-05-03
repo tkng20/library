@@ -24,6 +24,7 @@ public class Thongtincanhan extends AppCompatActivity {
     APIService userService;
     TextView hoTen,name,email,phone,gioitinh;
     int id;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class Thongtincanhan extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()) {
-                    User user = response.body();
+                    final User user = response.body();
                     hoTen.setText(user.getName().toString());
                     email.setText(user.getEmail().toString());
                     if(user.getPhone() != null) {
@@ -71,6 +72,19 @@ public class Thongtincanhan extends AppCompatActivity {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
+
+//        getUser();
+//        hoTen.setText(user.getName().toString());
+//        email.setText(user.getEmail().toString());
+//        if(user.getPhone() != null) {
+//            phone.setText(user.getPhone().toString());
+//        }
+//        else phone.setText("chưa có");
+//        if(user.getGender() != null) {
+//            gioitinh.setText(user.getGender().toString());
+//        }
+//        else gioitinh.setText("chưa có");
+
 
         Button btnEdit = (Button) findViewById(R.id.btn_Update);
         // Handle click event
@@ -93,5 +107,21 @@ public class Thongtincanhan extends AppCompatActivity {
             default:break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void getUser(){
+        Call<User> call = userService.getUser(id);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if(response.isSuccessful()) {
+                    user = response.body();
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.e("ERROR: ", t.getMessage());
+            }
+        });
     }
 }
