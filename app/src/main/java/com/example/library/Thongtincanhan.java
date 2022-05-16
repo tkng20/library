@@ -1,15 +1,19 @@
 package com.example.library;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.library.model.User;
 import com.example.library.remote.APIService;
@@ -25,6 +29,8 @@ public class Thongtincanhan extends AppCompatActivity {
     TextView hoTen,name,email,phone,gioitinh;
     int id;
     User user;
+    SharedPreferences sp;
+    ImageView imageViewAvatar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,16 @@ public class Thongtincanhan extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+
+        imageViewAvatar2 = findViewById(R.id.imageViewAvatar2);
+
+        sp=getSharedPreferences("credentials",MODE_PRIVATE);
+
+        if(!sp.getString("dp","").equals("")){
+            byte[] decodedString = Base64.decode(sp.getString("dp", ""), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            imageViewAvatar2.setImageBitmap(decodedByte);
+        }
 
 
         name = findViewById(R.id.tvName);
@@ -55,16 +71,21 @@ public class Thongtincanhan extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()) {
                     final User user = response.body();
-                    hoTen.setText(user.getName().toString());
-                    email.setText(user.getEmail().toString());
+                    hoTen.setText(user.getName());
+                    email.setText(user.getEmail());
                     if(user.getPhone() != null) {
-                        phone.setText(user.getPhone().toString());
+                        phone.setText(user.getPhone());
                     }
                     else phone.setText("chưa có");
                     if(user.getGender() != null) {
-                        gioitinh.setText(user.getGender().toString());
+                        gioitinh.setText(user.getGender());
                     }
                     else gioitinh.setText("chưa có");
+                    if(user.getAvatar() != null) {
+                        byte[] decodedString = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                        imageViewAvatar2.setImageBitmap(decodedByte);
+                    }
                 }
             }
             @Override
@@ -73,20 +94,8 @@ public class Thongtincanhan extends AppCompatActivity {
             }
         });
 
-//        getUser();
-//        hoTen.setText(user.getName().toString());
-//        email.setText(user.getEmail().toString());
-//        if(user.getPhone() != null) {
-//            phone.setText(user.getPhone().toString());
-//        }
-//        else phone.setText("chưa có");
-//        if(user.getGender() != null) {
-//            gioitinh.setText(user.getGender().toString());
-//        }
-//        else gioitinh.setText("chưa có");
 
-
-        Button btnEdit = (Button) findViewById(R.id.btn_Update);
+        Button btnEdit = findViewById(R.id.btn_Update);
         // Handle click event
         btnEdit.setOnClickListener(view -> {
             Intent intent = new Intent(this, ChinhSua.class);
@@ -107,21 +116,5 @@ public class Thongtincanhan extends AppCompatActivity {
             default:break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void getUser(){
-        Call<User> call = userService.getUser(id);
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if(response.isSuccessful()) {
-                    user = response.body();
-                }
-            }
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.e("ERROR: ", t.getMessage());
-            }
-        });
     }
 }

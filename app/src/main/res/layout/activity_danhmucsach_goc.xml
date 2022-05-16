@@ -117,7 +117,7 @@
                 app:srcCompat="@mipmap/book3_foreground" />
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/imageViewAvatar3"
                 android:layout_width="81dp"
                 android:layout_height="81dp"
                 android:translationX="155dp"

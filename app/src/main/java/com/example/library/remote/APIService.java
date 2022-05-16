@@ -84,6 +84,9 @@ public interface APIService {
     @PUT("api/update/{id}")
     Call<User> updateUser(@Path("id") int id, @Body User user);
 
+    @PUT("api/updateavatar/{id}")
+    Call<User> updateAvatarUser(@Path("id") int id, @Body User user);
+
 // book
     @GET("api/books")
     Call<List<Book>> getListBooks();

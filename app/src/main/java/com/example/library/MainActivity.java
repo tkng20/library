@@ -6,16 +6,31 @@ import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.library.model.User;
+import com.example.library.remote.APIService;
+import com.example.library.remote.ApiUtils;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView tvName;
+    SharedPreferences sp;
+    ImageView imageViewAvatar3;
+    APIService userService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +39,38 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);;
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+
+        imageViewAvatar3 = findViewById(R.id.imageViewAvatar3);
+        sp=getSharedPreferences("credentials",MODE_PRIVATE);
+
+        if(!sp.getString("dp","").equals("")){
+            byte[] decodedString = Base64.decode(sp.getString("dp", ""), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            imageViewAvatar3.setImageBitmap(decodedByte);
+        }
+
+        int id = sp.getInt("id",0);
+        userService = ApiUtils.getAPIService();
+        Call<User> call = userService.getUser(id);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response){
+                if(response.isSuccessful()) {
+                    final User user = response.body();
+                    if(user.getAvatar() != null) {
+                        byte[] decodedString = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                        imageViewAvatar3.setImageBitmap(decodedByte);
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.e("ERROR: ", t.getMessage());
+            }
+        });
+
         // View by id
         Button btnProfile = (Button) findViewById(R.id.btnProfile);
         Button btnChinhSua = (Button) findViewById(R.id.btnChinhSua);
@@ -115,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         editor.remove("username").commit();
         editor.remove("email").commit();
         editor.remove("password").commit();
+        editor.remove("dp").commit();
         editor.clear();
         editor.apply();
         startActivity(new Intent(getApplicationContext(),DangNhap.class));

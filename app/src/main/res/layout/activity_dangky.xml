@@ -86,8 +86,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_border"
-            android:drawableStart="@drawable/ic_lock"
-            android:drawableEnd="@drawable/ic_eye"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawableRight="@drawable/ic_eye"
             android:drawablePadding="20dip"
             android:ems="10"
             android:fontFamily="@font/nunito"
@@ -110,8 +110,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_border"
-            android:drawableStart="@drawable/ic_lock"
-            android:drawableEnd="@drawable/ic_eye"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawableRight="@drawable/ic_eye"
             android:drawablePadding="20dip"
             android:ems="10"
             android:fontFamily="@font/nunito"
@@ -184,7 +184,6 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textStyle="bold" />
-
     </LinearLayout>
 
 </RelativeLayout>

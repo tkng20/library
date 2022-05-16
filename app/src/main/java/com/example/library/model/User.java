@@ -34,6 +34,10 @@ public class User {
     @Expose
     private String phone;
 
+    @SerializedName("avatar")
+    @Expose
+    private String avatar;
+
     public User(){}
 
     public User(int id, String name, String email, String password) {
@@ -107,5 +111,13 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
