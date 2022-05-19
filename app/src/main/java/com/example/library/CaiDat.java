@@ -31,7 +31,7 @@ public class CaiDat extends AppCompatActivity {
         Button btnGioiThieu = findViewById(R.id.btnGioiThieu);
 
         btnDoiMK.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(CaiDat.this, DoiMatKhau.class);
+            Intent iSubActivity01 = new Intent(CaiDat.this, TaoMKMoi.class);
             startActivity(iSubActivity01);
         });
 

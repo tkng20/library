@@ -3,9 +3,7 @@ package com.example.library.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.sql.Date;
-
-public class Borrow {
+public class Favorite {
     @SerializedName("id")
     @Expose
     private int id;
@@ -17,16 +15,4 @@ public class Borrow {
     @SerializedName("book_id")
     @Expose
     private int book_id;
-
-    @SerializedName("status")
-    @Expose
-    private String status;
-
-    @SerializedName("date_borrow")
-    @Expose
-    private String date_borrow;
-
-    @SerializedName("date_return")
-    @Expose
-    private String date_return;
 }

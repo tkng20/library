@@ -97,5 +97,5 @@ public interface APIService {
     Call<Borrow> addBorrow(@Field("user_id") int user_id,
                            @Field("book_id") int book_id,
                            @Field("status") String status,
-                           @Field("date") Date date);
+                           @Field("date_borrow") Date date_borrow);
 }

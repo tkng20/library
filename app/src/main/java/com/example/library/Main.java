@@ -30,7 +30,7 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.p_main);
 
         setTitle("Retrofit 2 CRUD Demo");
 
@@ -56,7 +56,7 @@ public class Main extends AppCompatActivity {
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
                 if(response.isSuccessful()){
                     list = response.body();
-                    listView.setAdapter(new PostAdapter(Main.this, R.layout.list_post, list));
+                    listView.setAdapter(new PostAdapter(Main.this, R.layout.p_list_post, list));
                 }
             }
 

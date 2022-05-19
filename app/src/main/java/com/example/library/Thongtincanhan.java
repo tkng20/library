@@ -26,9 +26,7 @@ import retrofit2.Response;
 public class Thongtincanhan extends AppCompatActivity {
 
     APIService userService;
-    TextView hoTen,name,email,phone,gioitinh;
-    int id;
-    User user;
+    TextView hoTen,name,email,phone,gioitinh,ngaysinh;
     SharedPreferences sp;
     ImageView imageViewAvatar2;
 
@@ -57,6 +55,7 @@ public class Thongtincanhan extends AppCompatActivity {
         email = findViewById(R.id.tvEmail);
         phone = findViewById(R.id.tvPhone);
         gioitinh = findViewById(R.id.tvGioiTinh);
+        ngaysinh = findViewById(R.id.tvNgaySinh);
 
         SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
         int id = sp.getInt("id",0);
@@ -81,6 +80,10 @@ public class Thongtincanhan extends AppCompatActivity {
                         gioitinh.setText(user.getGender());
                     }
                     else gioitinh.setText("chưa có");
+                    if(user.getBirthday() != null) {
+                        ngaysinh.setText(user.getBirthday());
+                    }
+                    else ngaysinh.setText("chưa có");
                     if(user.getAvatar() != null) {
                         byte[] decodedString = Base64.decode(user.getAvatar(), Base64.DEFAULT);
                         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
@@ -102,6 +105,7 @@ public class Thongtincanhan extends AppCompatActivity {
             intent.putExtra("hoten",hoTen.getText());
             intent.putExtra("email",email.getText());
             intent.putExtra("phone",phone.getText());
+            intent.putExtra("birthday",ngaysinh.getText());
             this.startActivity(intent);
         });
     }

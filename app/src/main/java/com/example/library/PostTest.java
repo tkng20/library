@@ -26,7 +26,7 @@ public class PostTest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_post);
+        setContentView(R.layout.p_add_post);
 
         setTitle("Test");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

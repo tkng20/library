@@ -52,10 +52,12 @@ public class ChinhSua extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activiy_chinhsua);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+
         Button btnUpdate = (Button) findViewById(R.id.btn_Update);
         sp=getSharedPreferences("credentials",MODE_PRIVATE);
         userService = ApiUtils.getAPIService();
@@ -108,6 +110,7 @@ public class ChinhSua extends AppCompatActivity {
         TextView editName = findViewById(R.id.editName);
         TextView editEmail = findViewById(R.id.editEmail);
         TextView editPhone = findViewById(R.id.editPhone);
+        TextView editBirthday = findViewById(R.id.birthday);
 
         if(sp.contains("id")){
             name.setText(String.valueOf(id));
@@ -117,10 +120,12 @@ public class ChinhSua extends AppCompatActivity {
         String hoten = extras.getString("hoten");
         String email = extras.getString("email");
         String phone = extras.getString("phone");
+        String birthday = extras.getString("birthday");
 
         editName.setText(hoten);
         editEmail.setText(email);
         editPhone.setText(phone);
+        editBirthday.setText(birthday);
 
         btnUpdate.setOnClickListener(v -> {
             User u = new User ();
@@ -133,6 +138,7 @@ public class ChinhSua extends AppCompatActivity {
             } else {
                 u.setGender("Nam");
             }
+            u.setBirthday(editBirthday.getText().toString());
             updateUser(id, u);
         });
     }

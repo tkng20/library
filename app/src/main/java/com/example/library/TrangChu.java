@@ -51,6 +51,9 @@ public class TrangChu extends AppCompatActivity {
         Button btnTroGiup = findViewById(R.id.tc_TroGiup);
         bookService = ApiUtils.getAPIService();
 
+        onBackPressed();
+
+
         List<Book> returnedList2 = new ArrayList<>();
         getCategoryBook(returnedList2);
 
@@ -94,10 +97,7 @@ public class TrangChu extends AppCompatActivity {
             Intent iSubActivity01 = new Intent(TrangChu.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
-//        viewMore.setOnClickListener(view -> {
-//            Intent iSubActivity01 = new Intent(TrangChu.this, XemThem.class);
-//            startActivity(iSubActivity01);
-//        });
+
         tc_btnHome.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TrangChu.class);
             startActivity(iSubActivity01);
@@ -146,5 +146,8 @@ public class TrangChu extends AppCompatActivity {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
     }
 }

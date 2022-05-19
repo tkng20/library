@@ -33,6 +33,7 @@ public class DangNhap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangnhap);
         userService = ApiUtils.getAPIService();
+        onBackPressed();
 
         Button btnDangNhap = (Button) findViewById(R.id.btnDangNhap);
         Button btnDangKy = (Button) findViewById(R.id.signUp);
@@ -50,7 +51,7 @@ public class DangNhap extends AppCompatActivity {
             User user = new User();
             user.setEmail(email.getText().toString().trim());
             user.setPassword(password.getText().toString().trim());
-            login2(user.getEmail(),user.getPassword());
+            login(user.getEmail(),user.getPassword());
         });
 
         btnDangKy.setOnClickListener(view -> {
@@ -71,29 +72,6 @@ public class DangNhap extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(DangNhap.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent iSubActivity01 = new Intent(DangNhap.this, TrangChu.class);
-                            startActivity(iSubActivity01);
-                        }
-                    }, 700);
-                }
-            }
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(DangNhap.this,"Tài khoản / Mật khẩu không đúng", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    public void login2(String email, String password) {
-        Call<User> loginResponseCall = userService.login(email,password);
-        loginResponseCall.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful()) {
-                    Toast.makeText(DangNhap.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                     SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("username",response.body().getName().toString());
@@ -101,13 +79,10 @@ public class DangNhap extends AppCompatActivity {
                     editor.putString("password",password1.getText().toString());
                     editor.commit();
                     editor.apply();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent iSubActivity01 = new Intent(DangNhap.this, TrangChu.class);
-                            startActivity(iSubActivity01);
-                        }
-                    }, 50);
+                    new Handler().postDelayed(() -> {
+                        Intent iSubActivity01 = new Intent(DangNhap.this, TrangChu.class);
+                        startActivity(iSubActivity01);
+                    },500);
                 }
             }
             @Override
@@ -127,4 +102,12 @@ public class DangNhap extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void findViewByIds(){
+
+    }
+
+    public void onBackPressed() {
+    }
+
 }

@@ -10,9 +10,9 @@ import com.example.library.fragment.frag_damuon;
 import com.example.library.fragment.frag_dangmuon;
 import com.example.library.fragment.frag_denhan;
 
-public class VPAdapter extends FragmentStateAdapter {
+public class HistoryAdapter extends FragmentStateAdapter {
 
-    public VPAdapter(@NonNull FragmentActivity fm) {
+    public HistoryAdapter(@NonNull FragmentActivity fm) {
         super(fm);
     }
     @NonNull

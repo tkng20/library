@@ -19,6 +19,8 @@ import java.util.List;
 public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHolder> {
 
     private List<Book> mBooks;
+    private int id;
+    private String tacGia,theLoai,soLuong,soTrang,ngayXB,moTa;
     public void setData(List<Book> list){
         this.mBooks = list;
         notifyDataSetChanged();
@@ -34,6 +36,13 @@ public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHol
     @Override
     public void onBindViewHolder(@NonNull Book2ViewHolder holder, int position) {
         Book book = mBooks.get(position);
+        id = book.getId();
+        tacGia = book.getTacGia();
+        theLoai = book.getTheLoai();
+        soLuong = book.getSoLuong();
+        soTrang = book.getSoTrang();
+        ngayXB = book.getNgayXuatBan();
+        moTa = book.getMoTa();
         if(book == null){
             return;
         }
@@ -60,7 +69,14 @@ public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHol
             textTitle = itemView.findViewById(R.id.tenSach);
             imageView.setOnClickListener(view -> {
                 Intent myIntent = new Intent(view.getContext(),ChiTietSach.class);
+                myIntent.putExtra("book_id",id);
                 myIntent.putExtra("tenSach",textTitle.getText());
+                myIntent.putExtra("tacGia",tacGia);
+                myIntent.putExtra("theLoai",theLoai);
+                myIntent.putExtra("soLuong",soLuong);
+                myIntent.putExtra("soTrang",soTrang);
+                myIntent.putExtra("ngayXB",ngayXB);
+                myIntent.putExtra("moTa",moTa);
                 view.getContext().startActivity(myIntent);
             });
         }

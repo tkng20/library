@@ -24,6 +24,7 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhmucsach_goc.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhsachcho.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhsachyeuthich.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_danhsachyeuthich_goc.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_doimatkhau.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_giahan.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_gioithieu.xml" value="0.2" />
@@ -52,8 +53,11 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_post.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_sachmuonnhieu.xml" value="0.3333333333333333" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_test.xml" value="0.17527173913043478" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_yeuthich.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main_tro_giup.xml" value="0.1" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/p_add_post.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/p_list_post.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/post_activity.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_01.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_02.xml" value="0.2" />

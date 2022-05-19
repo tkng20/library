@@ -14,7 +14,7 @@ public class Lichsu extends AppCompatActivity {
 
     ViewPager2 viewPager;
     TabLayout tabLayout;
-    VPAdapter vpAdapter;
+    HistoryAdapter historyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class Lichsu extends AppCompatActivity {
         setContentView(R.layout.activity_lichsu);
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.pager);
-        vpAdapter = new VPAdapter(this);
-        viewPager.setAdapter(vpAdapter);
+        historyAdapter = new HistoryAdapter(this);
+        viewPager.setAdapter(historyAdapter);
 
         new TabLayoutMediator(tabLayout,viewPager, (tab, position) -> {
             switch (position){

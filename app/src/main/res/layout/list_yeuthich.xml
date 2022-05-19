@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="176dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="227dp"
+                        android:background="@drawable/shadow">
+
+                        <ImageView
+                            android:id="@+id/imgBook"
+                            android:layout_width="127dp"
+                            android:layout_height="176dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="40dp"
+                            app:srcCompat="@drawable/thuatdoctam" />
+
+                        <TextView
+                            android:id="@+id/ten_Sach_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:includeFontPadding="true"
+                            android:text="Thuật đọc tâm"
+                            android:textAlignment="center"
+                            android:textColor="#3E4685"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/imgView"
+                            android:layout_width="29dp"
+                            android:layout_height="43dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="145dp"
+                            android:layout_marginTop="16dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="41dp"
+                            android:layout_height="19dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="22dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/cn" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="176dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="227dp"
+                        android:background="@drawable/shadow">
+
+                        <ImageView
+                            android:id="@+id/imgBook"
+                            android:layout_width="127dp"
+                            android:layout_height="176dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="40dp"
+                            app:srcCompat="@drawable/thuatdoctam" />
+
+                        <TextView
+                            android:id="@+id/ten_Sach_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:includeFontPadding="true"
+                            android:text="Thuật đọc tâm"
+                            android:textAlignment="center"
+                            android:textColor="#3E4685"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/imgView"
+                            android:layout_width="29dp"
+                            android:layout_height="43dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="145dp"
+                            android:layout_marginTop="16dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="41dp"
+                            android:layout_height="19dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="22dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/cn" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

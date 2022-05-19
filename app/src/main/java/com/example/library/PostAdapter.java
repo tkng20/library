@@ -29,7 +29,7 @@ public class PostAdapter extends ArrayAdapter<Post> {
     @Override
     public View getView(final int pos, View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.list_post, parent, false);
+        View rowView = inflater.inflate(R.layout.p_list_post, parent, false);
 
         TextView txtUserId = (TextView) rowView.findViewById(R.id.txtUserId);
         TextView txtUsername = (TextView) rowView.findViewById(R.id.txtUsername);
