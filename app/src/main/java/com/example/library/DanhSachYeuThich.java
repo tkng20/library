@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.library.adapter.FavoriteAdapter;
 import com.example.library.model.Book;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
@@ -56,7 +57,7 @@ public class DanhSachYeuThich extends AppCompatActivity {
     }
 
    public void onClick(View v){
-       Intent iSubActivity01 = new Intent(DanhSachYeuThich.this, MainActivity.class);
+       Intent iSubActivity01 = new Intent(DanhSachYeuThich.this, TrangCaNhan.class);
        startActivity(iSubActivity01);
    }
 

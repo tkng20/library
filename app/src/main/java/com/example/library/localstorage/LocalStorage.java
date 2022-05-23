@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.library.localstorage;
 
 import android.content.Context;
 import android.content.SharedPreferences;

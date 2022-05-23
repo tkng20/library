@@ -17,8 +17,6 @@ import java.io.InputStream;
 
 public class ChiTietSach extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

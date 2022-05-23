@@ -2,6 +2,7 @@ package com.example.library.remote;
 
 import com.example.library.model.Book;
 import com.example.library.model.Borrow;
+import com.example.library.model.BorrowResponse;
 import com.example.library.model.Post;
 import com.example.library.model.User;
 
@@ -33,18 +34,18 @@ public interface APIService {
 
 // Test
 
-    @GET("api/posts")
-    Call<List<Post>> getPost();
-
-    @POST("api/posts")
-    @FormUrlEncoded
-    Call<Post> addPost(@Field("name") String name);
-
-    @PUT("api/posts/{id}")
-    Call<Post> updatePost(@Path("id") int id, @Body Post user);
-
-    @DELETE("api/posts/{id}")
-    Call<Post> deletePost(@Path("id") int id);
+//    @GET("api/posts")
+//    Call<List<Post>> getPost();
+//
+//    @POST("api/posts")
+//    @FormUrlEncoded
+//    Call<Post> addPost(@Field("name") String name);
+//
+//    @PUT("api/posts/{id}")
+//    Call<Post> updatePost(@Path("id") int id, @Body Post user);
+//
+//    @DELETE("api/posts/{id}")
+//    Call<Post> deletePost(@Path("id") int id);
 
 
 // user
@@ -86,6 +87,9 @@ public interface APIService {
 
     @PUT("api/updateavatar/{id}")
     Call<User> updateAvatarUser(@Path("id") int id, @Body User user);
+
+    @GET("api/getbook/{id}")
+    Call<List<BorrowResponse>> borrowResponse(@Path("id") int id);
 
 // book
     @GET("api/books")

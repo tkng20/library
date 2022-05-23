@@ -1,17 +1,17 @@
-package com.example.library;
+package com.example.library.adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.library.ChiTietSach;
+import com.example.library.R;
 import com.example.library.model.Book;
 
 import java.util.List;
@@ -68,7 +68,7 @@ public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHol
             imageView = itemView.findViewById(R.id.imageBook);
             textTitle = itemView.findViewById(R.id.tenSach);
             imageView.setOnClickListener(view -> {
-                Intent myIntent = new Intent(view.getContext(),ChiTietSach.class);
+                Intent myIntent = new Intent(view.getContext(), ChiTietSach.class);
                 myIntent.putExtra("book_id",id);
                 myIntent.putExtra("tenSach",textTitle.getText());
                 myIntent.putExtra("tacGia",tacGia);

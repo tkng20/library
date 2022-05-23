@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.library.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 
+import com.example.library.ChiTietSach;
+import com.example.library.R;
 import com.example.library.model.Book;
 import com.example.library.model.Post;
 

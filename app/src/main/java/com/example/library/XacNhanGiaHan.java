@@ -53,7 +53,7 @@ public class XacNhanGiaHan extends AppCompatActivity {
                 .setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent iSubActivity01 = new Intent(XacNhanGiaHan.this, MainActivity.class);
+                        Intent iSubActivity01 = new Intent(XacNhanGiaHan.this, TrangCaNhan.class);
                         startActivity(iSubActivity01);
                     }
                 })

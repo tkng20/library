@@ -3,23 +3,18 @@ package com.example.library;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.library.adapter.CategoryAdapter;
 import com.example.library.model.Book;
 import com.example.library.model.Category;
-import com.example.library.model.Post;
-import com.example.library.model.User;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -78,7 +73,7 @@ public class TrangChu extends AppCompatActivity {
         });
         // Handle click event
         imgProfile.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(TrangChu.this, MainActivity.class);
+            Intent iSubActivity01 = new Intent(TrangChu.this, TrangCaNhan.class);
             startActivity(iSubActivity01);
         });
         imgDSC.setOnClickListener(view -> {

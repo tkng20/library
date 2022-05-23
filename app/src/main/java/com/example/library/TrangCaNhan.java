@@ -2,7 +2,6 @@ package com.example.library;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,7 +11,6 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class TrangCaNhan extends AppCompatActivity {
 
     TextView tvName;
     SharedPreferences sp;
@@ -91,52 +89,52 @@ public class MainActivity extends AppCompatActivity {
 
         // Handle click event
         btnProfile.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Thongtincanhan.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Thongtincanhan.class);
             startActivity(iSubActivity01);
         });
 
         btnChinhSua.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Thongtincanhan.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Thongtincanhan.class);
             startActivity(iSubActivity01);
         });
 
         btnDSYT.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, DanhSachYeuThich.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, DanhSachYeuThich.class);
             startActivity(iSubActivity01);
         });
 
         btnLichSu.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Lichsu.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
 
         txtCXN.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Lichsu.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
 
         txtDangMuon.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Lichsu.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
 
         txtDaMuon.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Lichsu.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
 
         txtDenHan.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, Lichsu.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
 
         imgDSC.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, DanhSachCho.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, DanhSachCho.class);
             startActivity(iSubActivity01);
         });
 
         imgCaiDat.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(MainActivity.this, CaiDat.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, CaiDat.class);
             startActivity(iSubActivity01);
         });
 

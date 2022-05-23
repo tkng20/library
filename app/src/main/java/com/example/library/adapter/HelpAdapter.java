@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.library.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,11 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-public class SliderAdapter extends PagerAdapter {
+import com.example.library.R;
+
+public class HelpAdapter extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
 
-    public SliderAdapter(Context context) {
+    public HelpAdapter(Context context) {
         this.context = context;
     }
 
@@ -61,12 +63,9 @@ public class SliderAdapter extends PagerAdapter {
         ImageView slideImageView = (ImageView) view.findViewById((R.id.slide_image));
         TextView slideHeading = (TextView) view.findViewById((R.id.slide_heading));
         TextView slideDescription = (TextView) view.findViewById((R.id.slide_desc));
-
-//      slideImageView.setImageResource(R.drawable.slide1);
-      slideImageView.setImageResource(R.drawable.slide1);
-     //   slideImageView.setImageResource(slide_images[position]);
-        slideHeading.setText(slide_headings[1]);
-        slideDescription.setText(slide_descs[1]);
+        slideImageView.setImageResource(R.drawable.slide1);
+        slideHeading.setText(slide_headings[position]);
+        slideDescription.setText(slide_descs[position]);
         container.addView(view);
         return view;
     }

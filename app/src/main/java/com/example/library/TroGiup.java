@@ -10,11 +10,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.library.adapter.HelpAdapter;
+
 public class TroGiup extends AppCompatActivity {
 
     private ViewPager mSlideViewPager;
     private LinearLayout mDotLayout;
-    private SliderAdapter sliderAdapter;
+    private HelpAdapter helpAdapter;
     private TextView[] mDot;
 
     private Button mNextBtn;
@@ -30,8 +32,8 @@ public class TroGiup extends AppCompatActivity {
 
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
-        sliderAdapter = new SliderAdapter(this);
-        mSlideViewPager.setAdapter(sliderAdapter);
+        helpAdapter = new HelpAdapter(this);
+        mSlideViewPager.setAdapter(helpAdapter);
         addDotsIndicatior(0);
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
