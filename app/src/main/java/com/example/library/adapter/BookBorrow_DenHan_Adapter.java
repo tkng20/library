@@ -1,15 +1,18 @@
 package com.example.library.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 
+import com.example.library.Giahan;
 import com.example.library.R;
 import com.example.library.model.BorrowResponse;
 
@@ -34,23 +37,15 @@ public class BookBorrow_DenHan_Adapter extends ArrayAdapter<BorrowResponse> {
         TextView tenSach = (TextView) rowView.findViewById(R.id.dh_tenSach);
         TextView ngayMuon = (TextView) rowView.findViewById(R.id.dh_ngayMuon);
         TextView ngayTra = (TextView) rowView.findViewById(R.id.dh_ngayTra);
+        TextView giaHan = (Button) rowView.findViewById(R.id.btnGH1);
 
         tenSach.setText(borrowResponses.get(pos).getBook().getTenSach());
         ngayMuon.setText(borrowResponses.get(pos).getDate_borrow());
         ngayTra.setText(borrowResponses.get(pos).getDate_return());
-//        rowView.setOnClickListener(v -> {
-////            start Activity;
-//            Intent intent = new Intent(context, ChiTietSach.class);
-//            intent.putExtra("book_id",books.get(pos).getId());
-//            intent.putExtra("tenSach",books.get(pos).getTenSach());
-//            intent.putExtra("tacGia",books.get(pos).getTacGia());
-//            intent.putExtra("theLoai",books.get(pos).getTheLoai());
-//            intent.putExtra("soLuong",books.get(pos).getSoLuong());
-//            intent.putExtra("soTrang",books.get(pos).getSoTrang());
-//            intent.putExtra("ngayXB",books.get(pos).getNgayXuatBan());
-//            intent.putExtra("moTa",books.get(pos).getMoTa());
-//            context.startActivity(intent);
-//        });
+        giaHan.setOnClickListener(view -> {
+            Intent intent = new Intent(context, Giahan.class);
+            context.startActivity(intent);
+        });
         return rowView;
     }
 }
