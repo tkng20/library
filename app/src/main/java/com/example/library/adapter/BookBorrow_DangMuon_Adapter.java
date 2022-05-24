@@ -31,8 +31,8 @@ public class BookBorrow_DangMuon_Adapter extends ArrayAdapter<BorrowResponse> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.borrow_items_dangmuon, parent, false);
 
-        TextView tenSach = (TextView) rowView.findViewById(R.id.borrow_tenSach);
-        TextView ngayMuon = (TextView) rowView.findViewById(R.id.borrow_ngayMuon);
+        TextView tenSach = (TextView) rowView.findViewById(R.id.borrow1_tenSach);
+        TextView ngayMuon = (TextView) rowView.findViewById(R.id.borrow1_ngayMuon);
 
         tenSach.setText(borrowResponses.get(pos).getBook().getTenSach());
         ngayMuon.setText(borrowResponses.get(pos).getDate_borrow());

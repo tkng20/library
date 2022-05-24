@@ -39,7 +39,6 @@ public class frag_choxacnhan extends Fragment {
         sp=this.getActivity().getSharedPreferences("credentials",Context.MODE_PRIVATE);
         id_user = sp.getInt("id",0);
         listView = (ListView) rootView.findViewById(R.id.listBorrow);
-        listView = rootView.findViewById(R.id.listBorrow);
         getBookBorrow();
         return rootView;
     }

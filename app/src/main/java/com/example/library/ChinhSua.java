@@ -1,9 +1,5 @@
 package com.example.library;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -140,6 +136,12 @@ public class ChinhSua extends AppCompatActivity {
             }
             u.setBirthday(editBirthday.getText().toString());
             updateUser(id, u);
+
+            SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("username_after", editName.getText().toString());
+            editor.commit();
+            editor.apply();
         });
     }
 
@@ -166,7 +168,7 @@ public class ChinhSua extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Intent iSubActivity01 = new Intent(ChinhSua.this, Thongtincanhan.class);
+                            Intent iSubActivity01 = new Intent(ChinhSua.this, ThongTinCaNhan.class);
                             startActivity(iSubActivity01);
                         }
                     }, 50);
@@ -190,7 +192,7 @@ public class ChinhSua extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Intent iSubActivity01 = new Intent(ChinhSua.this, Thongtincanhan.class);
+                            Intent iSubActivity01 = new Intent(ChinhSua.this, ThongTinCaNhan.class);
                             startActivity(iSubActivity01);
                         }
                     }, 50);

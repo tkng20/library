@@ -70,7 +70,7 @@
             android:exported="false"
             android:label="Trang cá nhân"/>
         <activity
-            android:name=".Thongtincanhan"
+            android:name=".ThongTinCaNhan"
             android:exported="false"
             android:label="Thông tin cá nhân"
             android:parentActivityName=".TrangChu"/>

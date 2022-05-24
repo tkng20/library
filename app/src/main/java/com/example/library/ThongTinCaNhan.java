@@ -23,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Thongtincanhan extends AppCompatActivity {
+public class ThongTinCaNhan extends AppCompatActivity {
 
     APIService userService;
     TextView hoTen,name,email,phone,gioitinh,ngaysinh;

@@ -91,6 +91,12 @@ public interface APIService {
     @GET("api/getbook/{id}")
     Call<List<BorrowResponse>> borrowResponse(@Path("id") int id);
 
+    @GET("api/getbook1/{id}")
+    Call<List<BorrowResponse>> borrowResponse1(@Path("id") int id);
+
+    @GET("api/getbook2/{id}")
+    Call<List<BorrowResponse>> borrowResponse2(@Path("id") int id);
+
 // book
     @GET("api/books")
     Call<List<Book>> getListBooks();

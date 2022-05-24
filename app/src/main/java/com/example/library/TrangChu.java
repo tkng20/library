@@ -109,10 +109,13 @@ public class TrangChu extends AppCompatActivity {
 
     public void checkLogin(){
         SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
-        if(sp.contains("username")){
+        if(sp.contains("username") & !sp.contains("username_after")){
             heyName.setText("Hey "+sp.getString("username",""));
         }
-        else {
+        else if (sp.contains("username_after")){
+            heyName.setText("Hey "+sp.getString("username_after",""));
+        }
+        else{
             startActivity(new Intent(getApplicationContext(),DangNhap.class));
         }
     }

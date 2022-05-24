@@ -2,6 +2,7 @@ package com.example.library;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,9 +16,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.library.adapter.HistoryAdapter;
 import com.example.library.model.User;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +33,9 @@ public class TrangCaNhan extends AppCompatActivity {
     SharedPreferences sp;
     ImageView imageViewAvatar3;
     APIService userService;
+    ViewPager2 viewPager;
+    TabLayout tabLayout;
+    HistoryAdapter historyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,12 +96,12 @@ public class TrangCaNhan extends AppCompatActivity {
 
         // Handle click event
         btnProfile.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Thongtincanhan.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, ThongTinCaNhan.class);
             startActivity(iSubActivity01);
         });
 
         btnChinhSua.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(TrangCaNhan.this, Thongtincanhan.class);
+            Intent iSubActivity01 = new Intent(TrangCaNhan.this, ThongTinCaNhan.class);
             startActivity(iSubActivity01);
         });
 

@@ -31,11 +31,13 @@ public class BookBorrow_DenHan_Adapter extends ArrayAdapter<BorrowResponse> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.borrow_items_denhan, parent, false);
 
-        TextView tenSach = (TextView) rowView.findViewById(R.id.borrow_tenSach);
-        TextView ngayMuon = (TextView) rowView.findViewById(R.id.borrow_ngayMuon);
+        TextView tenSach = (TextView) rowView.findViewById(R.id.dh_tenSach);
+        TextView ngayMuon = (TextView) rowView.findViewById(R.id.dh_ngayMuon);
+        TextView ngayTra = (TextView) rowView.findViewById(R.id.dh_ngayTra);
 
         tenSach.setText(borrowResponses.get(pos).getBook().getTenSach());
         ngayMuon.setText(borrowResponses.get(pos).getDate_borrow());
+        ngayTra.setText(borrowResponses.get(pos).getDate_return());
 //        rowView.setOnClickListener(v -> {
 ////            start Activity;
 //            Intent intent = new Intent(context, ChiTietSach.class);

@@ -34,7 +34,7 @@
                     app:srcCompat="@drawable/thuatdoctam" />
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/borrow1_tenSach"
                     android:layout_width="148dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -70,7 +70,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/borrow1_ngayMuon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
