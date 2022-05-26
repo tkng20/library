@@ -1,23 +1,22 @@
 package com.example.library.model;
 
-import java.sql.Date;
-
 public class Book {
 
     private int id;
     private String tenSach;
     private String tacGia;
+    private Categories categories;
     private String theLoai;
     private String soLuong;
     private String soTrang;
     private String ngayXB;
     private String moTa;
 
-    public Book(int id, String tenSach, String tacGia, String theLoai, String soLuong, String soTrang, String ngayXuatBan, String moTa) {
+    public Book(int id, String tenSach, String tacGia, Categories categories, String soLuong, String soTrang, String ngayXuatBan, String moTa) {
         this.id = id;
         this.tenSach = tenSach;
         this.tacGia = tacGia;
-        this.theLoai = theLoai;
+        this.categories = categories;
         this.soLuong = soLuong;
         this.soTrang = soTrang;
         this.ngayXB = ngayXuatBan;
@@ -48,12 +47,20 @@ public class Book {
         this.tacGia = tacGia;
     }
 
-    public String getTheLoai() {
-        return theLoai;
+    public Categories getCategories() {
+        return categories;
     }
 
-    public void setTheLoai(String theLoai) {
-        this.theLoai = theLoai;
+    public void setCategories(Categories categories) {
+        this.categories = categories;
+    }
+
+    public String getNgayXB() {
+        return ngayXB;
+    }
+
+    public void setNgayXB(String ngayXB) {
+        this.ngayXB = ngayXB;
     }
 
     public String getSoLuong() {
@@ -72,19 +79,19 @@ public class Book {
         this.soTrang = soTrang;
     }
 
-    public String getNgayXuatBan() {
-        return ngayXB;
-    }
-
-    public void setNgayXuatBan(String ngayXuatBan) {
-        this.ngayXB = ngayXuatBan;
-    }
-
     public String getMoTa() {
         return moTa;
     }
 
     public void setMoTa(String moTa) {
         this.moTa = moTa;
+    }
+
+    public String getTheLoai() {
+        return theLoai;
+    }
+
+    public void setTheLoai(String theLoai) {
+        this.theLoai = theLoai;
     }
 }

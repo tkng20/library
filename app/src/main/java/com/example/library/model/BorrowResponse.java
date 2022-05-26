@@ -30,6 +30,10 @@ public class BorrowResponse {
     @Expose
     private String date_return;
 
+    @SerializedName("return_expect")
+    @Expose
+    private String return_expect;
+
     @SerializedName("book")
     @Expose
     private Book book;
@@ -93,6 +97,14 @@ public class BorrowResponse {
 
     public void setDate_return(String date_return) {
         this.date_return = date_return;
+    }
+
+    public String getReturn_expect() {
+        return return_expect;
+    }
+
+    public void setReturn_expect(String return_expect) {
+        this.return_expect = return_expect;
     }
 
     public Book getBook() {

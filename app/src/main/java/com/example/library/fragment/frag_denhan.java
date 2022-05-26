@@ -60,7 +60,7 @@ public class frag_denhan extends Fragment {
     }
     public void getBookBorrow()
     {
-        Call<List<BorrowResponse>> call = userService.borrowResponse1(id_user);
+        Call<List<BorrowResponse>> call = userService.borrowResponse3(id_user);
         call.enqueue(new Callback<List<BorrowResponse>>() {
             @Override
             public void onResponse(Call<List<BorrowResponse>> call, Response<List<BorrowResponse>> response) {

@@ -97,6 +97,9 @@ public interface APIService {
     @GET("api/getbook2/{id}")
     Call<List<BorrowResponse>> borrowResponse2(@Path("id") int id);
 
+    @GET("api/getbook3/{id}")
+    Call<List<BorrowResponse>> borrowResponse3(@Path("id") int id);
+
 // book
     @GET("api/books")
     Call<List<Book>> getListBooks();
@@ -108,4 +111,9 @@ public interface APIService {
                            @Field("book_id") int book_id,
                            @Field("status") String status,
                            @Field("date_borrow") Date date_borrow);
+
+
+    @PUT("api/borrows/{id}")
+    @FormUrlEncoded
+    Call<Borrow> updateBorrow(@Path("id") int id, @Field("return_expect") Date return_expect);
 }

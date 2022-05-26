@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.adapter.CategoryAdapter;
 import com.example.library.model.Book;
-import com.example.library.model.Category;
+import com.example.library.model.Categories;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -120,13 +120,13 @@ public class TrangChu extends AppCompatActivity {
         }
     }
 
-    public List<Category> getListCategory(){
-        List<Category> listCategory = new ArrayList<>();
-        listCategory.add(new Category("Sách mượn nhiều nhất",returnedList2));
-        listCategory.add(new Category("Sách mới nhất",returnedList2));
-        listCategory.add(new Category("Sách ngoại văn",returnedList2));
-        listCategory.add(new Category("Sách chuyên ngành",returnedList2));
-        return listCategory;
+    public List<Categories> getListCategory(){
+        List<Categories> listCategories = new ArrayList<>();
+        listCategories.add(new Categories("Sách mượn nhiều nhất",returnedList2));
+        listCategories.add(new Categories("Sách mới nhất",returnedList2));
+        listCategories.add(new Categories("Sách ngoại văn",returnedList2));
+        listCategories.add(new Categories("Sách chuyên ngành",returnedList2));
+        return listCategories;
     }
 
     public void getCategoryBook(final List<Book> returnedList) {

@@ -11,21 +11,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.R;
-import com.example.library.model.Category;
+import com.example.library.model.Categories;
 
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>{
 
     private Context mContext;
-    private List<Category> mListCategory;
+    private List<Categories> mListCategories;
 
     public CategoryAdapter (Context context) {
         this.mContext = context;
     }
 
-    public void setData(List<Category> list){
-        this.mListCategory = list;
+    public void setData(List<Categories> list){
+        this.mListCategories = list;
         notifyDataSetChanged();
     }
 
@@ -38,25 +38,25 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
-        Category category = mListCategory.get(position);
-        if(category == null){
+        Categories categories = mListCategories.get(position);
+        if(categories == null){
             return;
         }
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext,RecyclerView.HORIZONTAL,false);
         holder.rcvBook.setLayoutManager(linearLayoutManager);
 
-        holder.tvNameCategory.setText(category.getNameCategory());
+        holder.tvNameCategory.setText(categories.getTenTheLoai());
         BookAdapter2 bookAdapter2 = new BookAdapter2();
-        bookAdapter2.setData(category.getBooks());
+        bookAdapter2.setData(categories.getBooks());
 
         holder.rcvBook.setAdapter(bookAdapter2);
     }
 
     @Override
     public int getItemCount() {
-        if(mListCategory != null){
-            return mListCategory.size();
+        if(mListCategories != null){
+            return mListCategories.size();
         }
         return 0;
     }

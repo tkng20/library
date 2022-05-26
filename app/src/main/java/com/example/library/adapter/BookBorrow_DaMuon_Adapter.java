@@ -48,10 +48,10 @@ public class BookBorrow_DaMuon_Adapter extends ArrayAdapter<BorrowResponse> {
             intent.putExtra("book_id",borrowResponses.get(pos).getBook_id());
             intent.putExtra("tenSach",borrowResponses.get(pos).getBook().getTenSach());
             intent.putExtra("tacGia",borrowResponses.get(pos).getBook().getTacGia());
-            intent.putExtra("theLoai",borrowResponses.get(pos).getBook().getTheLoai());
+            intent.putExtra("theLoai",borrowResponses.get(pos).getBook().getCategories().getTenTheLoai());
             intent.putExtra("soLuong",borrowResponses.get(pos).getBook().getSoLuong());
             intent.putExtra("soTrang",borrowResponses.get(pos).getBook().getSoTrang());
-            intent.putExtra("ngayXB",borrowResponses.get(pos).getBook().getNgayXuatBan());
+            intent.putExtra("ngayXB",borrowResponses.get(pos).getBook().getNgayXB());
             intent.putExtra("moTa",borrowResponses.get(pos).getBook().getMoTa());
             context.startActivity(intent);
         });

@@ -38,10 +38,7 @@ public class ChiTietSach extends AppCompatActivity {
         final String soTrang = extras.getString("soTrang");
         final String ngayXB = extras.getString("ngayXB");
         final String moTa = extras.getString("moTa");
-
-
         final int book_id = extras.getInt("book_id");
-
         int maSach = book_id;
 
         title.setText(tenSach);

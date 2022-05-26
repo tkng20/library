@@ -43,7 +43,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
         TextView muonNgay = (TextView) rowView.findViewById(R.id.btnMuonNgay);
 
         tenSach.setText(books.get(pos).getTenSach().toString());
-        theLoai.setText(books.get(pos).getTheLoai().toString());
+        theLoai.setText(books.get(pos).getCategories().getTenTheLoai().toString());
         soLuong.setText(books.get(pos).getSoLuong().toString());
 
         rowView.setOnClickListener(v -> {
@@ -52,10 +52,10 @@ public class BookAdapter extends ArrayAdapter<Book> {
             intent.putExtra("book_id",books.get(pos).getId());
             intent.putExtra("tenSach",books.get(pos).getTenSach());
             intent.putExtra("tacGia",books.get(pos).getTacGia());
-            intent.putExtra("theLoai",books.get(pos).getTheLoai());
+            intent.putExtra("theLoai",books.get(pos).getCategories().getTenTheLoai());
             intent.putExtra("soLuong",books.get(pos).getSoLuong());
             intent.putExtra("soTrang",books.get(pos).getSoTrang());
-            intent.putExtra("ngayXB",books.get(pos).getNgayXuatBan());
+            intent.putExtra("ngayXB",books.get(pos).getNgayXB());
             intent.putExtra("moTa",books.get(pos).getMoTa());
             context.startActivity(intent);
         });

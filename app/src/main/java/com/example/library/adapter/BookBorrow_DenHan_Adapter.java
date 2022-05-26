@@ -41,9 +41,14 @@ public class BookBorrow_DenHan_Adapter extends ArrayAdapter<BorrowResponse> {
 
         tenSach.setText(borrowResponses.get(pos).getBook().getTenSach());
         ngayMuon.setText(borrowResponses.get(pos).getDate_borrow());
-        ngayTra.setText(borrowResponses.get(pos).getDate_return());
+        ngayTra.setText(borrowResponses.get(pos).getReturn_expect());
+        int maMuon = borrowResponses.get(pos).getId();
         giaHan.setOnClickListener(view -> {
             Intent intent = new Intent(context, Giahan.class);
+            intent.putExtra("maMuon",maMuon);
+            intent.putExtra("tenSach",tenSach.getText());
+            intent.putExtra("ngayMuon",ngayMuon.getText());
+            intent.putExtra("ngayTra",ngayTra.getText());
             context.startActivity(intent);
         });
         return rowView;

@@ -29,4 +29,75 @@ public class Borrow {
     @SerializedName("date_return")
     @Expose
     private String date_return;
+
+    @SerializedName("return_expect")
+    @Expose
+    private String return_expect;
+
+    public  Borrow(){};
+
+    public Borrow(int id, int user_id, int book_id, String status, String date_borrow, String date_return) {
+        this.id = id;
+        this.user_id = user_id;
+        this.book_id = book_id;
+        this.status = status;
+        this.date_borrow = date_borrow;
+        this.date_return = date_return;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getBook_id() {
+        return book_id;
+    }
+
+    public void setBook_id(int book_id) {
+        this.book_id = book_id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDate_borrow() {
+        return date_borrow;
+    }
+
+    public void setDate_borrow(String date_borrow) {
+        this.date_borrow = date_borrow;
+    }
+
+    public String getDate_return() {
+        return date_return;
+    }
+
+    public void setDate_return(String date_return) {
+        this.date_return = date_return;
+    }
+
+    public String getReturn_expect() {
+        return return_expect;
+    }
+
+    public void setReturn_expect(String return_expect) {
+        this.return_expect = return_expect;
+    }
 }
