@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="190dp"
@@ -17,7 +18,7 @@
             android:background="@drawable/round_backrough">
 
             <ImageView
-                android:id="@+id/imageBook1"
+                android:id="@+id/anhSach"
                 android:layout_width="130dp"
                 android:layout_height="147dp"
                 android:layout_marginTop="2dp"
@@ -27,7 +28,7 @@
                 app:srcCompat="@mipmap/bookss" />
 
             <TextView
-                android:id="@+id/ten_Sach_1"
+                android:id="@+id/tenSach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

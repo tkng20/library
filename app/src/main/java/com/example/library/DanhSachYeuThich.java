@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 
 import com.example.library.adapter.FavoriteAdapter;
 import com.example.library.model.Book;
+import com.example.library.model.Favorite;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
 
@@ -26,9 +28,10 @@ import retrofit2.Response;
 public class DanhSachYeuThich extends AppCompatActivity {
 
     ImageView imageView;
-    List<Book> list = new ArrayList<>();
+    List<Favorite> list = new ArrayList<>();
     ListView listView;
     APIService bookService;
+    int id_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,10 @@ public class DanhSachYeuThich extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
         bookService = ApiUtils.getAPIService();
         listView = findViewById(R.id.listFavorite);
-        getBookList();
+        SharedPreferences sp = getSharedPreferences("credentials", MODE_PRIVATE);
+        id_user = sp.getInt("id", 0);
+
+        getFavorite();
     }
 
     @Override
@@ -56,24 +62,19 @@ public class DanhSachYeuThich extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-   public void onClick(View v){
-       Intent iSubActivity01 = new Intent(DanhSachYeuThich.this, TrangCaNhan.class);
-       startActivity(iSubActivity01);
-   }
-
-    public void getBookList()
+    public void getFavorite()
     {
-        Call<List<Book>> call = bookService.getListBooks();
-        call.enqueue(new Callback<List<Book>>() {
+        Call<List<Favorite>> call = bookService.getFavorite(id_user);
+        call.enqueue(new Callback<List<Favorite>>() {
             @Override
-            public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
+            public void onResponse(Call<List<Favorite>> call, Response<List<Favorite>> response) {
                 if(response.isSuccessful()) {
                     list = response.body();
                     listView.setAdapter(new FavoriteAdapter(DanhSachYeuThich.this, R.layout.list_yeuthich, list));
                 }
             }
             @Override
-            public void onFailure(Call<List<Book>> call, Throwable t) {
+            public void onFailure(Call<List<Favorite>> call, Throwable t) {
                 Log.e("ERROR: ", t.getMessage());
             }
         });

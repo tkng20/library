@@ -13,15 +13,16 @@ import androidx.annotation.NonNull;
 
 import com.example.library.R;
 import com.example.library.model.Book;
+import com.example.library.model.Favorite;
 
 import java.util.List;
 
-public class FavoriteAdapter extends ArrayAdapter<Book> {
+public class FavoriteAdapter extends ArrayAdapter<Favorite> {
 
     private Context context;
-    private List<Book> books;
+    private List<Favorite> books;
 
-    public FavoriteAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Book> objects) {
+    public FavoriteAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Favorite> objects) {
         super(context, resource, objects);
         this.context = context;
         this.books = objects;
@@ -31,15 +32,8 @@ public class FavoriteAdapter extends ArrayAdapter<Book> {
     public View getView(final int pos, View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_yeuthich, parent, false);
-
         TextView tenSach1 = (TextView) rowView.findViewById(R.id.ten_Sach_1);
-        TextView tenSach2 = (TextView) rowView.findViewById(R.id.ten_Sach_2);
-        if(pos % 2 == 0 ){
-            tenSach1.setText(books.get(pos).getTenSach());
-        }
-        else{
-            tenSach2.setText(books.get(pos).getTenSach());
-        }
+        tenSach1.setText(books.get(pos).getBook().getTenSach());
         return rowView;
     }
 }

@@ -14,6 +14,7 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_heart.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_search.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/round_bg_green.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/search_xam.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/statusshadow.xml" value="0.2075" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/switch_thumb.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/switch_track.xml" value="0.187" />
@@ -40,7 +41,7 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_thongbao.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_thongtincanhan.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangcanhan.xml" value="0.1331521739130435" />
-        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu.xml" value="0.1" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu_goc.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhangiahan.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhanmuon.xml" value="0.1331521739130435" />
@@ -63,11 +64,12 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/fragment_items.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/item_book.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/item_category.xml" value="0.17527173913043478" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/items_search.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_book.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_post.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_sachmuonnhieu.xml" value="0.3333333333333333" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_test.xml" value="0.17527173913043478" />
-        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_yeuthich.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/list_yeuthich.xml" value="0.22" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/main_tro_giup.xml" value="0.1" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/p_add_post.xml" value="0.2" />
@@ -77,6 +79,7 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_01.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_02.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/quen_mat_khau_03.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/search.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test2.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/test_dms.xml" value="0.2" />
@@ -87,6 +90,9 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/z_p_list_post.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/z_p_main.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/z_post_activity.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/menu/menu.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/menu/menu_search.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/menu/mymenu.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/drawable/ic_email_background.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/drawable/ic_vector (2).xml" value="0.2075" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Nhi - Copy/app/src/main/res/drawable/ic_vector.xml" value="0.165" />

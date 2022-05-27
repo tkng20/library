@@ -3,15 +3,19 @@ package com.example.library;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.library.adapter.BookAdapter;
@@ -31,7 +35,9 @@ public class DanhMucSach extends AppCompatActivity {
 
     APIService bookService;
     List<Book> list = new ArrayList<>();
-    ListView listView;
+    ListView listView,listView2;
+    String[] name = {"a","b","c"};
+    ArrayAdapter<String> arrayAdapter;
 
     String arr[]={
             "Sách mới nhất",
@@ -43,6 +49,11 @@ public class DanhMucSach extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activiy_danhmucsach);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+
         selection =(TextView) findViewById(R.id.selection);
 
         listView = findViewById(R.id.listBook);
@@ -53,6 +64,7 @@ public class DanhMucSach extends AppCompatActivity {
         ImageView tc_btnHome = findViewById(R.id.dms_btnHome);
         ImageView tc_btnNotice = findViewById(R.id.dms_btnNotice);
         FloatingActionButton tc_btnDiscover = findViewById(R.id.dms_btnDiscover);
+        ImageView tc_Profile = findViewById(R.id.dms_Profile);
 
 
         tc_btnHome.setOnClickListener(view -> {
@@ -67,6 +79,11 @@ public class DanhMucSach extends AppCompatActivity {
 
         tc_btnDiscover.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(DanhMucSach.this, DanhMucSach.class);
+            startActivity(iSubActivity01);
+        });
+
+        tc_Profile.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(DanhMucSach.this, TrangCaNhan.class);
             startActivity(iSubActivity01);
         });
 
@@ -122,5 +139,26 @@ public class DanhMucSach extends AppCompatActivity {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            case R.id.action_search:
+                startActivity(new Intent(getApplicationContext(),Search.class));
+                break;
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

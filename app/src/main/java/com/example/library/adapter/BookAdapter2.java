@@ -70,16 +70,16 @@ public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHol
             tv_tenSach = itemView.findViewById(R.id.tenSach);
             tv_theLoai = itemView.findViewById(R.id.theLoai);
             imageView.setOnClickListener(view -> {
-                Intent myIntent = new Intent(view.getContext(), ChiTietSach.class);
-                myIntent.putExtra("book_id",id);
-                myIntent.putExtra("tenSach",tv_tenSach.getText());
-                myIntent.putExtra("tacGia",tacGia);
-                myIntent.putExtra("theLoai",theLoai);
-                myIntent.putExtra("soLuong",soLuong);
-                myIntent.putExtra("soTrang",soTrang);
-                myIntent.putExtra("ngayXB",ngayXB);
-                myIntent.putExtra("moTa",moTa);
-                view.getContext().startActivity(myIntent);
+                Intent intent = new Intent(view.getContext(), ChiTietSach.class);
+                intent.putExtra("book_id",id);
+                intent.putExtra("tenSach",tv_tenSach.getText());
+                intent.putExtra("tacGia",tacGia);
+                intent.putExtra("theLoai",theLoai);
+                intent.putExtra("soLuong",soLuong);
+                intent.putExtra("soTrang",soTrang);
+                intent.putExtra("ngayXB",ngayXB);
+                intent.putExtra("moTa",moTa);
+                view.getContext().startActivity(intent);
             });
         }
     }

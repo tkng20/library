@@ -53,20 +53,18 @@
         <activity
             android:name=".ThongBao"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.Library" />
         <activity
             android:name=".TrangChu"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".DanhMucSach"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:exported="false"/>
         <activity
             android:name=".CaiDat"
             android:exported="false"
             android:label="Cài đặt"/>
-<!--            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />-->
         <activity
             android:name=".TrangCaNhan"
             android:exported="false"
@@ -126,6 +124,9 @@
             android:name=".TaoMKMoi"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

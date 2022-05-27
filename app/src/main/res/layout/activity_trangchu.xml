@@ -261,7 +261,7 @@
             android:id="@+id/tc_btnDiscover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottomAppBar"
+            app:layout_anchor="@+id/bottomAppBar"
             app:srcCompat="@drawable/ic_baseline_explore" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

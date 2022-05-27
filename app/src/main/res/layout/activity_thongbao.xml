@@ -5,47 +5,12 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <RelativeLayout
-        android:id="@+id/topLinear"
-        android:layout_width="match_parent"
-        android:layout_height="48dp">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="10dp"
-            android:layout_height="16dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/ic_left_arrow" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="73dp"
-            android:layout_height="19dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="272dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="14dp"
-            android:fontFamily="@font/nunito"
-            android:text="Xoá tất cả"
-            android:textColor="#00268D"
-            android:textSize="16sp" />
-
-    </RelativeLayout>
-
-
     <TableLayout
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="10dp">
 
         <TableRow
             android:layout_width="match_parent"
