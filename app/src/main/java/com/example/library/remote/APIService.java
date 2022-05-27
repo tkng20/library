@@ -3,6 +3,7 @@ package com.example.library.remote;
 import com.example.library.model.Book;
 import com.example.library.model.Borrow;
 import com.example.library.model.BorrowResponse;
+import com.example.library.model.Favorite;
 import com.example.library.model.Post;
 import com.example.library.model.User;
 
@@ -100,6 +101,9 @@ public interface APIService {
     @GET("api/getbook3/{id}")
     Call<List<BorrowResponse>> borrowResponse3(@Path("id") int id);
 
+    @GET("api/getfavorite/{id}")
+    Call<List<Favorite>> getFavorite(@Path("id") int id);
+
 // book
     @GET("api/books")
     Call<List<Book>> getListBooks();
@@ -116,4 +120,12 @@ public interface APIService {
     @PUT("api/borrows/{id}")
     @FormUrlEncoded
     Call<Borrow> updateBorrow(@Path("id") int id, @Field("return_expect") Date return_expect);
+
+    @POST("api/favorites")
+    @FormUrlEncoded
+    Call<Favorite> addFavorite(@Field("user_id") int user_id,
+                             @Field("book_id") int book_id);
+
+    @DELETE("api/favorites/{id}")
+    Call<Favorite> deleteFavorite(@Path("id") int id);
 }

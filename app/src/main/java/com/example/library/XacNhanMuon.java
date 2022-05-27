@@ -109,8 +109,6 @@ public class XacNhanMuon extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         borrow(id_user,id_book,ngaydk);
-                        Intent intent = new Intent(XacNhanMuon.this,TrangChu.class);
-                        startActivity(intent);
                     }
                 })
                 .show();
@@ -121,10 +119,15 @@ public class XacNhanMuon extends AppCompatActivity {
             @Override
             public void onResponse(Call<Borrow> call, Response<Borrow> response) {
                 // this method is called when we get response from our api.
-                Toast.makeText(XacNhanMuon.this, "Đăng ký mượn thành công", Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()){
+                        Intent intent = new Intent(XacNhanMuon.this, TrangChu.class);
+                        startActivity(intent);
+                        Toast.makeText(XacNhanMuon.this, "Đăng ký mượn thành công", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onFailure(Call<Borrow> call, Throwable t) {
+                Toast.makeText(XacNhanMuon.this, "Bạn đã mượn quyển này", Toast.LENGTH_SHORT).show();
                 Log.e("ERROR: ", t.getMessage());
             }
         });

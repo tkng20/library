@@ -38,6 +38,10 @@ public class User {
     @Expose
     private String avatar;
 
+    @SerializedName("favorite")
+    @Expose
+    private Favorite favorite;
+
     public User(){}
 
     public User(int id, String name, String email, String password) {
@@ -119,5 +123,13 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Favorite getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Favorite favorite) {
+        this.favorite = favorite;
     }
 }

@@ -34,6 +34,10 @@ public class Borrow {
     @Expose
     private String return_expect;
 
+    @SerializedName("mess")
+    @Expose
+    private String mess;
+
     public  Borrow(){};
 
     public Borrow(int id, int user_id, int book_id, String status, String date_borrow, String date_return) {
@@ -99,5 +103,13 @@ public class Borrow {
 
     public void setReturn_expect(String return_expect) {
         this.return_expect = return_expect;
+    }
+
+    public String getMess() {
+        return mess;
+    }
+
+    public void setMess(String mess) {
+        this.mess = mess;
     }
 }

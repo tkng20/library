@@ -249,16 +249,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/setting" />
 
-        <ImageView
-            android:id="@+id/imgDSC"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="43dp"
-            app:srcCompat="@drawable/wait"
-            tools:ignore="ImageContrastCheck" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imgDSC"-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="28dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginTop="13dp"-->
+<!--            android:layout_marginEnd="43dp"-->
+<!--            app:srcCompat="@drawable/wait"-->
+<!--            tools:ignore="ImageContrastCheck" />-->
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

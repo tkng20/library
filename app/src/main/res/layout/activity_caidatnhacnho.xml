@@ -117,17 +117,6 @@
 <!--        tools:layout_editor_absoluteY="0dp" />-->
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="-13dp"
-        android:layout_toStartOf="@+id/imageView3"
-        app:srcCompat="@drawable/book"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="24dp" />
-
-    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -170,10 +159,10 @@
     <View
         android:id="@+id/view14"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="0dp"
         android:layout_below="@id/imageView4"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="318dp"
+        android:layout_marginTop="337dp"
         android:layout_marginBottom="0dp"
         android:background="#3E70F7" />
 

@@ -76,10 +76,7 @@ public class TrangChu extends AppCompatActivity {
             Intent iSubActivity01 = new Intent(TrangChu.this, TrangCaNhan.class);
             startActivity(iSubActivity01);
         });
-        imgDSC.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(TrangChu.this, DanhSachCho.class);
-            startActivity(iSubActivity01);
-        });
+
         btnChoXacNhan.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, Lichsu.class);
             startActivity(iSubActivity01);

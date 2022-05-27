@@ -89,7 +89,6 @@ public class TrangCaNhan extends AppCompatActivity {
         TextView txtDangMuon = (TextView) findViewById(R.id.txtDangMuon);
         TextView txtDaMuon = (TextView) findViewById(R.id.txtDaMuon);
         TextView txtDenHan = (TextView) findViewById(R.id.txtDenHan);
-        ImageView imgDSC = (ImageView) findViewById(R.id.imgDSC);
         ImageView imgCaiDat = (ImageView) findViewById(R.id.imgCaiDat);
 
         checkLogin();
@@ -132,11 +131,6 @@ public class TrangCaNhan extends AppCompatActivity {
 
         txtDenHan.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangCaNhan.this, Lichsu.class);
-            startActivity(iSubActivity01);
-        });
-
-        imgDSC.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(TrangCaNhan.this, DanhSachCho.class);
             startActivity(iSubActivity01);
         });
 
