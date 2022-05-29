@@ -2,7 +2,10 @@ package com.example.library;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Window;
 import android.widget.Button;
@@ -13,9 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.library.adapter.BookAdapter;
 import com.example.library.adapter.CategoryAdapter;
 import com.example.library.model.Book;
 import com.example.library.model.Categories;
+import com.example.library.model.User;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,6 +39,10 @@ public class TrangChu extends AppCompatActivity {
     CategoryAdapter categoryAdapter;
     RecyclerView rcv_cate;
     public List<Book> returnedList2 = new ArrayList<>();
+    SharedPreferences sp;
+    ImageView imageViewAvatar3;
+    APIService userService;
+    public List<Categories> listCategories = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +58,40 @@ public class TrangChu extends AppCompatActivity {
 
         onBackPressed();
 
+        imageViewAvatar3 = findViewById(R.id.imgProfile);
+        sp=getSharedPreferences("credentials",MODE_PRIVATE);
+
+        if(!sp.getString("dp","").equals("")){
+            byte[] decodedString = Base64.decode(sp.getString("dp", ""), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            imageViewAvatar3.setImageBitmap(decodedByte);
+        }
+
+        int id = sp.getInt("id",0);
+        userService = ApiUtils.getAPIService();
+        Call<User> call = userService.getUser(id);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response){
+                if(response.isSuccessful()) {
+                    final User user = response.body();
+                    if(user.getAvatar() != null) {
+                        byte[] decodedString = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                        imageViewAvatar3.setImageBitmap(decodedByte);
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.e("ERROR: ", t.getMessage());
+            }
+        });
+
 
         List<Book> returnedList2 = new ArrayList<>();
-        getCategoryBook(returnedList2);
+//        getCategoryBook(returnedList2);
 
-        Button viewMore = findViewById(R.id.viewmore);
         ImageView tc_btnHome = findViewById(R.id.tc_btnHome);
         ImageView tc_btnNotice = findViewById(R.id.tc_btnNotice);
         FloatingActionButton tc_btnDiscover = findViewById(R.id.tc_btnDiscover);
@@ -71,37 +109,42 @@ public class TrangChu extends AppCompatActivity {
         btnTroGiup.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TroGiup.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
         // Handle click event
         imgProfile.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TrangCaNhan.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
-
         btnChoXacNhan.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, Lichsu.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
         btnLichSu.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, Lichsu.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
         btnGiaHan.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, Lichsu.class);
             startActivity(iSubActivity01);
         });
-
         tc_btnHome.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TrangChu.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
         tc_btnNotice.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, ThongBao.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
         tc_btnDiscover.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, DanhMucSach.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
     }
 
@@ -119,30 +162,40 @@ public class TrangChu extends AppCompatActivity {
     }
 
     public List<Categories> getListCategory(){
-        List<Categories> listCategories = new ArrayList<>();
-        listCategories.add(new Categories("Sách mượn nhiều nhất",returnedList2));
-        listCategories.add(new Categories("Sách mới nhất",returnedList2));
-        listCategories.add(new Categories("Sách ngoại văn",returnedList2));
-        listCategories.add(new Categories("Sách chuyên ngành",returnedList2));
-        return listCategories;
-    }
-
-    public void getCategoryBook(final List<Book> returnedList) {
-        Call<List<Book>> call = bookService.getListBooks();
-        call.enqueue(new Callback<List<Book>>() {
+        Call<List<Categories>> call = bookService.getListCategories();
+        call.enqueue(new Callback<List<Categories>>() {
             @Override
-            public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
+            public void onResponse(Call<List<Categories>> call, Response<List<Categories>> response) {
                 if(response.isSuccessful()) {
-                    returnedList2.clear();
-                    returnedList2.addAll(response.body());
+                    listCategories.clear();
+                    listCategories.addAll(response.body());
                 }
             }
             @Override
-            public void onFailure(Call<List<Book>> call, Throwable t) {
+            public void onFailure(Call<List<Categories>> call, Throwable t) {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
+        return listCategories;
     }
+
+//    public void getCategoryBook(final List<Book> returnedList) {
+//        Call<List<Book>> call = bookService.getListBooks();
+//        call.enqueue(new Callback<List<Book>>() {
+//            @Override
+//            public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
+//                if(response.isSuccessful()) {
+//                    returnedList2.clear();
+//                    returnedList2.addAll(response.body());
+//                }
+//            }
+//            @Override
+//            public void onFailure(Call<List<Book>> call, Throwable t) {
+//                Log.e("ERROR: ", t.getMessage());
+//            }
+//        });
+//    }
+
     @Override
     public void onBackPressed() {
     }

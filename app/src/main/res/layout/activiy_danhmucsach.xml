@@ -292,6 +292,8 @@
             android:id="@+id/dms_btnDiscover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:foreground="@drawable/ic_baseline_explore"
+            app:backgroundTint="@null"
             app:layout_anchor="@id/bottomAppBar"
             app:srcCompat="@drawable/ic_baseline_explore" />
 

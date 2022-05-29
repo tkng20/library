@@ -25,14 +25,6 @@
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:label="Sách xem nhiều nhất"/>
         <activity
-            android:name=".QuenMatKhau3"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".QuenMatKhau2"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".DangNhap"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -82,10 +74,6 @@
             android:exported="false"
             android:label="Danh sách yêu thích" />
         <activity
-            android:name=".DanhSachCho"
-            android:exported="false"
-            android:label="Danh sách chờ" />
-        <activity
             android:name=".Lichsu"
             android:exported="false"
             android:label="Lịch sử" />
@@ -116,14 +104,9 @@
             android:label="Gia hạn"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
-            android:name=".DoiMatKhau"
-            android:exported="false"
-            android:label="Gia hạn"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
-        <activity
             android:name=".TaoMKMoi"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.Library" />
         <activity
             android:name=".Search"
             android:exported="false" />

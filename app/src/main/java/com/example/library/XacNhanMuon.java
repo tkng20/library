@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +19,9 @@ import com.example.library.model.Borrow;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,11 +39,25 @@ public class XacNhanMuon extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_xacnhanmuon2);
+        setContentView(R.layout.activity_xacnhanmuon);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+
+
+
         btnChonNgay = findViewById(R.id.chonngay);
         btnXacNhanMuon = findViewById(R.id.btnXNM1);
         btnXacNhanMuon.setOnClickListener(this::onClick);
         userService = ApiUtils.getAPIService();
+
+        ImageView home = findViewById(R.id.home);
+        ImageView notification = findViewById(R.id.notification);
+        FloatingActionButton discover = findViewById(R.id.discover);
+
+
 
         TextView ten = findViewById(R.id.m_ten);
         TextView email = findViewById(R.id.m_email);
@@ -77,10 +91,20 @@ public class XacNhanMuon extends AppCompatActivity {
 
         btnChonNgay.setText(i_date+"/"+i_month+"/"+i_year);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        home.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(XacNhanMuon.this, TrangChu.class);
+            startActivity(iSubActivity01);
+        });
+
+        discover.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(XacNhanMuon.this, DanhMucSach.class);
+            startActivity(iSubActivity01);
+        });
+
+        notification.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(XacNhanMuon.this, ThongBao.class);
+            startActivity(iSubActivity01);
+        });
     }
 
     @Override

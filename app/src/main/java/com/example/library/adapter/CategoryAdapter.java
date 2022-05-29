@@ -1,16 +1,21 @@
 package com.example.library.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.library.ChiTietSach;
 import com.example.library.R;
+import com.example.library.Search;
+import com.example.library.XemThem;
 import com.example.library.model.Categories;
 
 import java.util.List;
@@ -47,7 +52,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.rcvBook.setLayoutManager(linearLayoutManager);
 
         holder.tvNameCategory.setText(categories.getTenTheLoai());
-        BookAdapter2 bookAdapter2 = new BookAdapter2();
+        MainAdapter2 bookAdapter2 = new MainAdapter2();
         bookAdapter2.setData(categories.getBooks());
 
         holder.rcvBook.setAdapter(bookAdapter2);
@@ -64,12 +69,21 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public class CategoryViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvNameCategory;
+        private Button viewmore;
         private RecyclerView rcvBook;
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNameCategory = itemView.findViewById(R.id.tv_name_category);
             rcvBook = itemView.findViewById(R.id.rcv_book);
+            viewmore = itemView.findViewById(R.id.viewmore);
+            viewmore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), XemThem.class);
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

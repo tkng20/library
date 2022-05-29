@@ -31,42 +31,34 @@
                 android:textSize="26sp"
                 android:translationY="12dp" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imgTC_DanhSachCho"-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="45dp"-->
-<!--                android:layout_marginEnd="-20dp"-->
-<!--                android:translationX="22dp"-->
-<!--                android:translationY="10dp"-->
-<!--                app:srcCompat="@drawable/book" />-->
-
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgProfile"
-                android:layout_width="111dp"
+                android:layout_width="50dp"
                 android:layout_height="85dp"
-                android:translationX="15dp"
+                android:translationX="50dp"
                 android:translationY="-10dp"
-                app:srcCompat="@mipmap/avaa_foreground" />
-
+                android:src="@drawable/avatar"/>
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button21"
             android:layout_width="35dp"
             android:layout_height="35dp"
+            android:layout_marginEnd="96dp"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/round_backrough"
             android:backgroundTint="#3E70F7"
             android:drawableStart="@drawable/ic_baseline_search_24"
             android:paddingStart="5dp"
             android:textAllCaps="false"
-            android:translationX="270dp"
+            android:translationX="230dp"
             android:translationY="60dp"></androidx.appcompat.widget.AppCompatButton>
 
         <EditText
             android:id="@+id/editSearch3"
 
-            android:layout_width="220dp"
-            android:layout_height="35dp"
+            android:layout_width="184dp"
+            android:layout_height="36dp"
 
             android:background="@drawable/round_backrough"
             android:backgroundTint="@color/timkiem"
@@ -124,8 +116,7 @@
                         android:text="Gia                                                           hạn"
                         android:textAllCaps="false"
                         android:textColor="#FFFFFF"
-                        android:textSize="20sp">
-                    </androidx.appcompat.widget.AppCompatButton>
+                        android:textSize="20sp"></androidx.appcompat.widget.AppCompatButton>
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnTC_ChoXacNhan"
@@ -238,7 +229,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="bottom"
-            app:backgroundTint="#3E70F7">
+            app:backgroundTint="#4977F3">
 
             <ImageView
                 android:id="@+id/tc_btnHome"
@@ -261,8 +252,12 @@
             android:id="@+id/tc_btnDiscover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@+id/bottomAppBar"
+            android:foreground="@drawable/ic_baseline_explore"
+            app:backgroundTint="@null"
+            app:layout_anchor="@id/bottomAppBar"
             app:srcCompat="@drawable/ic_baseline_explore" />
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </LinearLayout>

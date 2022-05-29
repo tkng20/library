@@ -1,13 +1,9 @@
 package com.example.library;
 
 import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.CancellationSignal;
-import android.service.controls.actions.FloatAction;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,8 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.library.model.User;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
-import com.google.android.material.datepicker.MaterialDatePicker;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
@@ -41,7 +35,7 @@ public class Muon extends AppCompatActivity implements DatePickerDialog.OnDateSe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_muon_2);
+        setContentView(R.layout.activity_muon);
         btn = findViewById(R.id.btnChoose);
         FloatingActionButton btnDiscover = findViewById(R.id.discover);
         View btnHome = findViewById(R.id.home);

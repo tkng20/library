@@ -159,6 +159,7 @@ public class TrangCaNhan extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         editor.remove("username").commit();
         editor.remove("email").commit();
+        editor.remove("mail").commit();
         editor.remove("password").commit();
         editor.remove("dp").commit();
         editor.clear();

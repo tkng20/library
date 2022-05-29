@@ -13,15 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.library.ChiTietSach;
 import com.example.library.R;
 import com.example.library.model.Book;
+import com.example.library.model.BookResponse;
 
 import java.util.List;
 
-public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHolder> {
+public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHolder> {
 
-    private List<Book> mBooks;
-    private int id;
+    private List<BookResponse> mBooks;
+    private int id,cate_id;
     private String tacGia,theLoai,soLuong,soTrang,ngayXB,moTa;
-    public void setData(List<Book> list){
+    public void setData(List<BookResponse> list){
         this.mBooks = list;
         notifyDataSetChanged();
     }
@@ -35,10 +36,10 @@ public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull Book2ViewHolder holder, int position) {
-        Book book = mBooks.get(position);
+        BookResponse book = mBooks.get(position);
         id = book.getId();
         tacGia = book.getTacGia();
-        theLoai = book.getCategories().getTenTheLoai();
+//        cate_id = book.getCategories_id();
         soLuong = book.getSoLuong();
         soTrang = book.getSoTrang();
         ngayXB = book.getNgayXB();
@@ -48,7 +49,7 @@ public class BookAdapter2 extends RecyclerView.Adapter<BookAdapter2.Book2ViewHol
         }
         holder.imageView.setImageResource(R.drawable.sach2);
         holder.tv_tenSach.setText(book.getTenSach());
-        holder.tv_theLoai.setText(book.getCategories().getTenTheLoai());
+//        holder.tv_theLoai.setText(cate_id);
     }
 
     @Override

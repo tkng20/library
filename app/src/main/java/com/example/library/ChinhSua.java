@@ -164,6 +164,7 @@ public class ChinhSua extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
+                    finish();
                     Toast.makeText(ChinhSua.this, "User updated successfully!", Toast.LENGTH_SHORT).show();
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -173,7 +174,6 @@ public class ChinhSua extends AppCompatActivity {
                         }
                     }, 50);
                 }
-                finish();
             }
             @Override
             public void onFailure(Call<User> call, Throwable t) {

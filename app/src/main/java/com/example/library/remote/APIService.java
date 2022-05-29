@@ -3,6 +3,7 @@ package com.example.library.remote;
 import com.example.library.model.Book;
 import com.example.library.model.Borrow;
 import com.example.library.model.BorrowResponse;
+import com.example.library.model.Categories;
 import com.example.library.model.Favorite;
 import com.example.library.model.Post;
 import com.example.library.model.User;
@@ -72,12 +73,25 @@ public interface APIService {
             @Field("password") String password
     );
 
+    @POST("api/checkpassword")
+    @FormUrlEncoded
+    Call<String> checkPassword(
+            @Field("email") String email,
+            @Field("password") String password
+    );
+
 
     @POST("api/logout")
     @FormUrlEncoded
     Call<User> logout(
             @Field("email") String email,
             @Field("password") String password
+    );
+
+    @POST("api/forgotpassword")
+    @FormUrlEncoded
+    Call<String> sendEmail(
+            @Field("email") String email
     );
 
     @GET("api/show/{id}")
@@ -88,6 +102,9 @@ public interface APIService {
 
     @PUT("api/updateavatar/{id}")
     Call<User> updateAvatarUser(@Path("id") int id, @Body User user);
+
+    @PUT("api/updatepassword/{id}")
+    Call<User> updatePassword(@Path("id") int id, @Body User user);
 
     @GET("api/getbook/{id}")
     Call<List<BorrowResponse>> borrowResponse(@Path("id") int id);
@@ -128,4 +145,8 @@ public interface APIService {
 
     @DELETE("api/favorites/{id}")
     Call<Favorite> deleteFavorite(@Path("id") int id);
+
+// categories
+    @GET("api/categories")
+    Call<List<Categories>> getListCategories();
 }

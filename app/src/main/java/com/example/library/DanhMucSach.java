@@ -70,21 +70,25 @@ public class DanhMucSach extends AppCompatActivity {
         tc_btnHome.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(DanhMucSach.this, TrangChu.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
 
         tc_btnNotice.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(DanhMucSach.this, ThongBao.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
 
         tc_btnDiscover.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(DanhMucSach.this, DanhMucSach.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
 
         tc_Profile.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(DanhMucSach.this, TrangCaNhan.class);
             startActivity(iSubActivity01);
+            overridePendingTransition(0,0);
         });
 
         //Lấy đối tượng Spinner ra
@@ -156,6 +160,7 @@ public class DanhMucSach extends AppCompatActivity {
                 return true;
             case R.id.action_search:
                 startActivity(new Intent(getApplicationContext(),Search.class));
+                overridePendingTransition(0,0);
                 break;
             default:break;
         }

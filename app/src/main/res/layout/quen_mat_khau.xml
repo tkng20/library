@@ -39,97 +39,41 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Mã xác nhận đã được gửi đến emailnguyenvana@gmail.com \nVui lòng kiểm tra và nhập mã xác nhận ở phía  dưới."
-            android:textColor="@color/black" />
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/in1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/round_border"
-                android:drawablePadding="20dip"
-                android:ems="10"
-                android:fontFamily="@font/nunito"
-                android:inputType="text"
-                android:paddingLeft="30dp"
-                android:textColor="@android:color/system_neutral1_800"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/in2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/round_border"
-                android:drawablePadding="20dip"
-                android:ems="10"
-                android:fontFamily="@font/nunito"
-                android:inputType="text"
-                android:paddingLeft="30dp"
-                android:textColor="@android:color/system_neutral1_800"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/in3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/round_border"
-                android:drawablePadding="20dip"
-                android:ems="10"
-                android:fontFamily="@font/nunito"
-                android:inputType="text"
-                android:paddingLeft="30dp"
-                android:textColor="@android:color/system_neutral1_800"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/in4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/round_border"
-                android:drawablePadding="20dip"
-                android:ems="10"
-                android:fontFamily="@font/nunito"
-                android:inputType="text"
-                android:paddingLeft="30dp"
-                android:textColor="@android:color/system_neutral1_800"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="14sp" />
-        </LinearLayout>
+            android:layout_marginRight="20dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="20dip"
+            android:ems="10"
+            android:fontFamily="@font/nunito"
+            android:hint="Email"
+            android:inputType="text"
+            android:paddingLeft="30dp"
+            android:textColor="@android:color/system_neutral1_800"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="14sp" />
 
         <Button
-            android:id="@+id/qmk2_xacnhan"
+            android:id="@+id/btn_sendEmail"
             android:layout_width="268dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/round_bg_green"
+            android:background="@drawable/round_bg_yellow"
             android:fontFamily="@font/nunito"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
-            android:text="Xác nhận"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Gửi mã xác nhận đến Email này" />
 
     </LinearLayout>
 
@@ -142,7 +86,7 @@
         android:paddingTop="30dp">
 
         <Button
-            android:id="@+id/qmk2_dangnhap"
+            android:id="@+id/qmk_dangnhap"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -158,7 +102,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/qmk2_dangky"
+            android:id="@+id/qmk_dangky"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

@@ -31,45 +31,101 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
+                        android:layout_height="49dp"
                         android:layout_gravity="start"
                         android:background="@drawable/statusshadow"
                         android:backgroundTint="#699BF7"
                         android:fontFamily="@font/nunito_sans_bold"
                         android:gravity="left|center"
+                        android:paddingLeft="15dp"
+
                         android:text="Thông tin người mượn"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="41dp"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="@font/nunito_sans_bold"
-                        android:gravity=""
-                        android:text="Họ tên: Trần Thanh Hạ Linh"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
                         android:layout_height="36dp"
                         android:layout_marginStart="10dp"
-                        android:fontFamily="@font/nunito_sans_bold"
-                        android:gravity=""
-                        android:text="Điện thoại: 0702289785"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/nunito_sans_bold">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="Họ tên"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/m_ten"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="Thanh Thanh"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
                         android:layout_marginStart="10dp"
                         android:fontFamily="@font/nunito_sans_bold"
-                        android:gravity=""
-                        android:text="Email: halinhtt1903@gmail.com"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="Email"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/m_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="kimngan@gmail.com"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/nunito_sans_bold"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="Điện thoại"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/m_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="0123456789"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -89,6 +145,7 @@
                         android:backgroundTint="#699BF7"
                         android:fontFamily="@font/nunito_sans_bold"
                         android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Thông tin mượn sách"
 
                         android:textColor="#FFFFFF"
@@ -106,11 +163,12 @@
                             android:layout_height="match_parent"
                             android:fontFamily="@font/nunito_sans_bold"
                             android:gravity="center"
-                            android:text="Số lượng"
+                            android:text="Tên sách"
                             android:textColor="#000000"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:id="@+id/m_title"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
@@ -138,6 +196,7 @@
                             android:textSize="18sp" />
 
                         <Button
+                            android:id="@+id/chonngay"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
@@ -213,16 +272,18 @@
             android:id="@+id/bottomAppBar"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_gravity="bottom"
             app:backgroundTint="#3E70F7">
             <ImageView
+                android:id="@+id/home"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="left"
                 android:layout_marginLeft="50dp"
                 android:background="@drawable/ic_home2"/>
             <ImageView
+                android:id="@+id/notification"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
@@ -232,7 +293,7 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/discover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foreground="@drawable/ic_baseline_explore"

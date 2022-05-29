@@ -75,6 +75,7 @@ public class DangNhap extends AppCompatActivity {
                     SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("username",response.body().getName().toString());
+                    editor.putString("mail",response.body().getEmail().toString());
                     editor.putInt("id", response.body().getId());
                     editor.putString("password",password1.getText().toString());
                     editor.commit();

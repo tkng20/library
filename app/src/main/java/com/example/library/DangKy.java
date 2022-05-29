@@ -38,22 +38,19 @@ public class DangKy extends AppCompatActivity {
         setContentView(R.layout.activity_dangky);
         userService = ApiUtils.getAPIService();
 
-        Button btnDangNhap = (Button) findViewById(R.id.signIn);
-        Button btnDangKy = (Button) findViewById(R.id.dk_btnDangKy);
-        Button btnQuenMK = (Button) findViewById(R.id.dk_forgotPass);
+        Button btnDangNhap = findViewById(R.id.signIn);
+        Button btnDangKy = findViewById(R.id.dk_btnDangKy);
+        Button btnQuenMK = findViewById(R.id.dk_forgotPass);
 
         name = findViewById(R.id.signupName);
         email= findViewById(R.id.signupEmail);
-        pw = (EditText) findViewById(R.id.signupPass);
-        conf = (EditText) findViewById(R.id.signupConf);
+        pw = findViewById(R.id.signupPass);
+        conf = findViewById(R.id.signupConf);
 
         // Handle click event
-        btnDangNhap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent iSubActivity01 = new Intent(DangKy.this, DangNhap.class);
-                startActivity(iSubActivity01);
-            }
+        btnDangNhap.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(DangKy.this, DangNhap.class);
+            startActivity(iSubActivity01);
         });
 
         btnQuenMK.setOnClickListener(new View.OnClickListener() {
@@ -66,28 +63,25 @@ public class DangKy extends AppCompatActivity {
 
         // Handle switch between hide and view password
 
-        pw.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                final int RIGHT = 2 ;
-                if(event.getAction() == MotionEvent.ACTION_UP) {
-                    if(event.getRawX() >= (pw.getRight() - pw.getCompoundDrawables()[RIGHT].getBounds().width() - 80)) {
-                        int selection = pw.getSelectionEnd();
-                        if(passwordVisible){
-                            pw.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            pw.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_lock,0,R.drawable.ic_eye_off,0);
-                            passwordVisible = false;
-                        }else {
-                            pw.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            pw.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_lock,0,R.drawable.ic_eye,0);
-                            passwordVisible = true;
-                        }
-                        pw.setSelection(selection);
-                        return true;
+        pw.setOnTouchListener((view, event) -> {
+            final int RIGHT = 2 ;
+            if(event.getAction() == MotionEvent.ACTION_UP) {
+                if(event.getRawX() >= (pw.getRight() - pw.getCompoundDrawables()[RIGHT].getBounds().width() - 80)) {
+                    int selection = pw.getSelectionEnd();
+                    if(passwordVisible){
+                        pw.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        pw.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_lock,0,R.drawable.ic_eye_off,0);
+                        passwordVisible = false;
+                    }else {
+                        pw.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        pw.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_lock,0,R.drawable.ic_eye,0);
+                        passwordVisible = true;
                     }
+                    pw.setSelection(selection);
+                    return true;
                 }
-                return false;
             }
+            return false;
         });
 
         conf.setOnTouchListener(new View.OnTouchListener() {
