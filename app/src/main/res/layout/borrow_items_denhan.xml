@@ -56,7 +56,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageBook6"
+                    android:id="@+id/imageBook"
                     android:layout_width="148dp"
                     android:layout_height="118dp"
                     app:srcCompat="@drawable/thuatdoctam" />

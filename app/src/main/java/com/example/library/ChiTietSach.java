@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ import com.example.library.model.BorrowResponse;
 import com.example.library.model.Favorite;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
+import com.squareup.picasso.Picasso;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -68,6 +70,7 @@ public class ChiTietSach extends AppCompatActivity {
         TextView num_page = findViewById(id.sotrang);
         TextView publish_date = findViewById(id.ngayxb);
         TextView des = findViewById(id.mota);
+        ImageView image = findViewById(id.imageBook);
         change = findViewById(id.switch1);
 
         Bundle extras = getIntent().getExtras();
@@ -78,6 +81,7 @@ public class ChiTietSach extends AppCompatActivity {
         final String soTrang = extras.getString("soTrang");
         final String ngayXB = extras.getString("ngayXB");
         final String moTa = extras.getString("moTa");
+        final String anhBia = extras.getString("image");
         final int book_id = extras.getInt("book_id");
         int maSach = book_id;
         id_book = book_id;
@@ -89,7 +93,7 @@ public class ChiTietSach extends AppCompatActivity {
         num_page.setText(soTrang);
         publish_date.setText(ngayXB);
         des.setText(moTa);
-
+        Picasso.with(ChiTietSach.this).load("http://3.0.59.80/test/public/public/storage/"+anhBia).into(image);
         SharedPreferences sp = getSharedPreferences("credentials", MODE_PRIVATE);
         id_user = sp.getInt("id", 0);
 

@@ -38,7 +38,6 @@ public class TrangChu extends AppCompatActivity {
     APIService bookService;
     CategoryAdapter categoryAdapter;
     RecyclerView rcv_cate;
-    public List<Book> returnedList2 = new ArrayList<>();
     SharedPreferences sp;
     ImageView imageViewAvatar3;
     APIService userService;
@@ -87,10 +86,6 @@ public class TrangChu extends AppCompatActivity {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
-
-
-        List<Book> returnedList2 = new ArrayList<>();
-//        getCategoryBook(returnedList2);
 
         ImageView tc_btnHome = findViewById(R.id.tc_btnHome);
         ImageView tc_btnNotice = findViewById(R.id.tc_btnNotice);
@@ -178,23 +173,6 @@ public class TrangChu extends AppCompatActivity {
         });
         return listCategories;
     }
-
-//    public void getCategoryBook(final List<Book> returnedList) {
-//        Call<List<Book>> call = bookService.getListBooks();
-//        call.enqueue(new Callback<List<Book>>() {
-//            @Override
-//            public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
-//                if(response.isSuccessful()) {
-//                    returnedList2.clear();
-//                    returnedList2.addAll(response.body());
-//                }
-//            }
-//            @Override
-//            public void onFailure(Call<List<Book>> call, Throwable t) {
-//                Log.e("ERROR: ", t.getMessage());
-//            }
-//        });
-//    }
 
     @Override
     public void onBackPressed() {

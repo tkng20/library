@@ -20,6 +20,7 @@ import com.example.library.Search;
 import com.example.library.TrangChu;
 import com.example.library.model.Book;
 import com.example.library.model.Categories;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,17 +31,19 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 //    private Context mContext;
     private List<Book> mListBooks;
     private List<Book> mListBooksOld;
+    private Context context;
 
     private int id;
-    private String tacGia,theLoai,soLuong,soTrang,ngayXB,moTa;
+    private String tacGia,theLoai,soLuong,soTrang,ngayXB,moTa,image;
 
     public SearchAdapter (List<Book> list) {
         this.mListBooks = list;
         this.mListBooksOld = list;
     }
 
-    public void setData(List<Book> list){
+    public void setData(@NonNull Context context,List<Book> list){
         this.mListBooks = list;
+        this.context = context;
         notifyDataSetChanged();
     }
 
@@ -61,10 +64,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         soTrang = books.getSoTrang();
         ngayXB = books.getNgayXB();
         moTa = books.getMoTa();
+        image = books.getImage();
         if(books == null){
             return;
         }
         holder.tenSach.setText(books.getTenSach());
+        Picasso.with(context).load("http://3.0.59.80/test/public/public/storage/"+image).into(holder.anhSach);
     }
 
     @Override
@@ -93,6 +98,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 intent.putExtra("soTrang",soTrang);
                 intent.putExtra("ngayXB",ngayXB);
                 intent.putExtra("moTa",moTa);
+                intent.putExtra("image",image);
                 view.getContext().startActivity(intent);
             });
         }

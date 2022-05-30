@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
@@ -16,6 +17,7 @@ import com.example.library.ChiTietSach;
 import com.example.library.R;
 import com.example.library.model.Book;
 import com.example.library.model.Post;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -40,11 +42,12 @@ public class BookAdapter extends ArrayAdapter<Book> {
         TextView tenSach = (TextView) rowView.findViewById(R.id.tenSach);
         TextView theLoai = (TextView) rowView.findViewById(R.id.theLoai);
         TextView soLuong = (TextView) rowView.findViewById(R.id.soLuong);
-        TextView muonNgay = (TextView) rowView.findViewById(R.id.btnMuonNgay);
+        ImageView anhSach = rowView.findViewById(R.id.anhSach);
 
         tenSach.setText(books.get(pos).getTenSach().toString());
         theLoai.setText(books.get(pos).getCategories().getTenTheLoai().toString());
         soLuong.setText(books.get(pos).getSoLuong().toString());
+        Picasso.with(context).load("http://3.0.59.80/test/public/public/storage/"+books.get(pos).getImage()).into(anhSach);
 
         rowView.setOnClickListener(v -> {
             //start Activity
@@ -57,6 +60,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
             intent.putExtra("soTrang",books.get(pos).getSoTrang());
             intent.putExtra("ngayXB",books.get(pos).getNgayXB());
             intent.putExtra("moTa",books.get(pos).getMoTa());
+            intent.putExtra("image",books.get(pos).getImage());
             context.startActivity(intent);
         });
         return rowView;

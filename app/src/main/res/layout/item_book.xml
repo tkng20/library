@@ -21,14 +21,14 @@
 
 
             <ImageView
-                android:id="@+id/imageBook"
+                android:id="@+id/tc_imageBook"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:translationY="2dp"
                 app:srcCompat="@mipmap/bookss" />
 
             <TextView
-                android:id="@+id/theLoai"
+                android:id="@+id/tc_theLoai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
@@ -46,7 +46,7 @@
 
 
             <TextView
-                android:id="@+id/tenSach"
+                android:id="@+id/tc_tenSach"
                 android:layout_width="147dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"

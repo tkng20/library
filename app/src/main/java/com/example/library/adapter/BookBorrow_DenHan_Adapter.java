@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import com.example.library.Giahan;
 import com.example.library.R;
 import com.example.library.model.BorrowResponse;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,6 +40,9 @@ public class BookBorrow_DenHan_Adapter extends ArrayAdapter<BorrowResponse> {
         TextView ngayMuon = (TextView) rowView.findViewById(R.id.dh_ngayMuon);
         TextView ngayTra = (TextView) rowView.findViewById(R.id.dh_ngayTra);
         TextView giaHan = (Button) rowView.findViewById(R.id.btnGH1);
+
+        ImageView anhSach = rowView.findViewById(R.id.imageBook);
+        Picasso.with(context).load("http://3.0.59.80/test/public/public/storage/"+borrowResponses.get(pos).getBook().getImage()).into(anhSach);
 
         tenSach.setText(borrowResponses.get(pos).getBook().getTenSach());
         ngayMuon.setText(borrowResponses.get(pos).getDate_borrow());

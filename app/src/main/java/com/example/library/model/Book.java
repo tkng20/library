@@ -11,6 +11,7 @@ public class Book {
     private String soTrang;
     private String ngayXB;
     private String moTa;
+    private String image;
 
     public Book(){}
 
@@ -95,5 +96,13 @@ public class Book {
 
     public void setTheLoai(String theLoai) {
         this.theLoai = theLoai;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

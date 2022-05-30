@@ -53,7 +53,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         holder.tvNameCategory.setText(categories.getTenTheLoai());
         MainAdapter2 bookAdapter2 = new MainAdapter2();
-        bookAdapter2.setData(categories.getBooks());
+        bookAdapter2.setData(mContext,R.layout.item_category,categories.getBooks());
 
         holder.rcvBook.setAdapter(bookAdapter2);
     }
@@ -77,12 +77,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             tvNameCategory = itemView.findViewById(R.id.tv_name_category);
             rcvBook = itemView.findViewById(R.id.rcv_book);
             viewmore = itemView.findViewById(R.id.viewmore);
-            viewmore.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), XemThem.class);
-                    view.getContext().startActivity(intent);
-                }
+            viewmore.setOnClickListener(view -> {
+                Intent intent = new Intent(view.getContext(), XemThem.class);
+                view.getContext().startActivity(intent);
             });
         }
     }

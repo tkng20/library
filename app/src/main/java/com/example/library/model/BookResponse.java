@@ -36,6 +36,10 @@ public class BookResponse {
     @Expose
     private String moTa;
 
+    @SerializedName("image")
+    @Expose
+    private String image;
+
     public BookResponse(){}
 
     public BookResponse(int id, String tenSach, String tacGia, int categories_id, String soLuong, String soTrang, String ngayXB, String moTa) {
@@ -111,5 +115,13 @@ public class BookResponse {
 
     public void setCategories_id(int categories_id) {
         this.categories_id = categories_id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
