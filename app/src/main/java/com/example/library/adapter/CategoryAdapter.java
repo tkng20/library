@@ -54,7 +54,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.tvNameCategory.setText(categories.getTenTheLoai());
         MainAdapter2 bookAdapter2 = new MainAdapter2();
         bookAdapter2.setData(mContext,R.layout.item_category,categories.getBooks());
-
         holder.rcvBook.setAdapter(bookAdapter2);
     }
 

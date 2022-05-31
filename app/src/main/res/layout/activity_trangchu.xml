@@ -9,13 +9,13 @@
 
     <RelativeLayout
         android:layout_width="358dp"
-        android:layout_height="121dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
             android:orientation="horizontal">
 
@@ -35,46 +35,44 @@
                 android:id="@+id/imgProfile"
                 android:layout_width="50dp"
                 android:layout_height="85dp"
-                android:translationX="50dp"
-                android:translationY="-10dp"
-                android:src="@drawable/avatar"/>
+                android:src="@drawable/avatar" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button21"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="96dp"
-            android:layout_marginBottom="26dp"
-            android:background="@drawable/round_backrough"
-            android:backgroundTint="#3E70F7"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:paddingStart="5dp"
-            android:textAllCaps="false"
-            android:translationX="230dp"
-            android:translationY="60dp"></androidx.appcompat.widget.AppCompatButton>
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button21"-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_marginEnd="96dp"-->
+<!--            android:layout_marginBottom="26dp"-->
+<!--            android:background="@drawable/round_backrough"-->
+<!--            android:backgroundTint="#3E70F7"-->
+<!--            android:drawableStart="@drawable/ic_baseline_search_24"-->
+<!--            android:paddingStart="5dp"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:translationX="230dp"-->
+<!--            android:translationY="60dp"></androidx.appcompat.widget.AppCompatButton>-->
 
-        <EditText
-            android:id="@+id/editSearch3"
+<!--        <EditText-->
+<!--            android:id="@+id/editSearch3"-->
 
-            android:layout_width="184dp"
-            android:layout_height="36dp"
+<!--            android:layout_width="184dp"-->
+<!--            android:layout_height="36dp"-->
 
-            android:background="@drawable/round_backrough"
-            android:backgroundTint="@color/timkiem"
+<!--            android:background="@drawable/round_backrough"-->
+<!--            android:backgroundTint="@color/timkiem"-->
 
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="Tìm kiếm"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
+<!--            android:drawablePadding="10dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Tìm kiếm"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:minHeight="48dp"-->
 
 
-            android:paddingLeft="15dp"
-            android:textAlignment="viewStart"
-            android:translationX="40dp"
-            android:translationY="60dp"
-            app:layout_constraintHorizontal_bias="0.444" />
+<!--            android:paddingLeft="15dp"-->
+<!--            android:textAlignment="viewStart"-->
+<!--            android:translationX="40dp"-->
+<!--            android:translationY="60dp"-->
+<!--            app:layout_constraintHorizontal_bias="0.444" />-->
 
     </RelativeLayout>
 
@@ -220,6 +218,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </androidx.recyclerview.widget.RecyclerView>
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/recycler_View"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent" />-->
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

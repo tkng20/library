@@ -24,13 +24,13 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
 
     private List<BookResponse> mBooks;
     private Context context;
-    private int id;
-    private String tacGia,soLuong,soTrang,ngayXB,moTa,image;
+    private int id,theLoai;
+    private String tenSach,tacGia,soLuong,soTrang,ngayXB,moTa,image;
     public void setData(@NonNull Context context, @LayoutRes int resource,@NonNull List<BookResponse> list){
 //        super(context, resource, list);
         this.mBooks = list;
         this.context = context;
-        notifyDataSetChanged();
+//        notifyDataSetChanged();
     }
 
     @NonNull
@@ -43,18 +43,22 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
     @Override
     public void onBindViewHolder(@NonNull Book2ViewHolder holder, int position) {
         BookResponse book = mBooks.get(position);
-        id = book.getId();
-        tacGia = book.getTacGia();
-        soLuong = book.getSoLuong();
-        soTrang = book.getSoTrang();
-        ngayXB = book.getNgayXB();
-        moTa = book.getMoTa();
-        image = book.getImage();
         if(book == null){
             return;
         }
-        holder.imageView.setImageResource(R.drawable.sach2);
+        else{
+            id = book.getId();
+            tenSach = book.getTenSach();
+            tacGia = book.getTacGia();
+            theLoai = book.getCategories_id();
+            soLuong = book.getSoLuong();
+            soTrang = book.getSoTrang();
+            ngayXB = book.getNgayXB();
+            moTa = book.getMoTa();
+            image = book.getImage();
+        }
         holder.tv_tenSach.setText(book.getTenSach());
+        holder.tv_theLoai.setText(String.valueOf(book.getCategories_id()));
         Picasso.with(context).load("http://3.0.59.80/test/public/public/storage/"+image).into(holder.imageView);
     }
 
@@ -79,9 +83,9 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
             imageView.setOnClickListener(view -> {
                 Intent intent = new Intent(view.getContext(), ChiTietSach.class);
                 intent.putExtra("book_id",id);
-                intent.putExtra("tenSach",tv_tenSach.getText());
+                intent.putExtra("tenSach",tenSach);
                 intent.putExtra("tacGia",tacGia);
-                intent.putExtra("theLoai","theLoai");
+                intent.putExtra("theLoai",theLoai);
                 intent.putExtra("soLuong",soLuong);
                 intent.putExtra("soTrang",soTrang);
                 intent.putExtra("ngayXB",ngayXB);

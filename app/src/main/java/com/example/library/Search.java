@@ -63,34 +63,18 @@ public class Search extends AppCompatActivity {
         call.enqueue(new Callback<List<Book>>() {
             @Override
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     searchAdapter = new SearchAdapter(response.body());
                     rcvsearch.setAdapter(searchAdapter);
                 }
             }
+
             @Override
             public void onFailure(Call<List<Book>> call, Throwable t) {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
-
-//        searchAdapter = new SearchAdapter(getListBook());
-//        rcvsearch.setAdapter(searchAdapter);
-
-
-//        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,name);
-//        listView2.setAdapter(arrayAdapter);
-
     }
-
-//    private List<Book> getListBook() {
-////        List<Book> list = new ArrayList<>();
-////        Book book = new Book();
-////        book.setTenSach("AAA");
-////        list.add(book);
-//        return returnedList2;
-//    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

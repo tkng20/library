@@ -35,9 +35,15 @@ public class CaiDat extends AppCompatActivity {
         builder = new AlertDialog.Builder(this);
         Button btnCaiDatNhacNho = findViewById(R.id.btnCaiDatNhacNho);
         Button btnGioiThieu = findViewById(R.id.btnGioiThieu);
+        Button test = findViewById(R.id.profile);
 
         btnDoiMK.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(CaiDat.this, TaoMKMoi.class);
+            startActivity(iSubActivity01);
+        });
+
+        test.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(CaiDat.this, MainActivity.class);
             startActivity(iSubActivity01);
         });
 

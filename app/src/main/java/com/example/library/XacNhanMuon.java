@@ -1,8 +1,11 @@
 package com.example.library;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.example.library.model.Borrow;
 import com.example.library.remote.APIService;
@@ -35,6 +40,9 @@ public class XacNhanMuon extends AppCompatActivity {
     int id_book;
     String date;
     Date ngaydk;
+    TextView title;
+
+    NotificationCompat.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +54,15 @@ public class XacNhanMuon extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
 
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("My Channel", "My Channel", importance);
+            channel.setDescription("aaa");
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
 
         btnChonNgay = findViewById(R.id.chonngay);
         btnXacNhanMuon = findViewById(R.id.btnXNM1);
@@ -56,14 +72,11 @@ public class XacNhanMuon extends AppCompatActivity {
         ImageView home = findViewById(R.id.home);
         ImageView notification = findViewById(R.id.notification);
         FloatingActionButton discover = findViewById(R.id.discover);
-
-
-
         TextView ten = findViewById(R.id.m_ten);
         TextView email = findViewById(R.id.m_email);
         TextView phone = findViewById(R.id.m_phone);
-
         TextView title = findViewById(R.id.m_title);
+
         Bundle extras = getIntent().getExtras();
         final int sach_id = extras.getInt("maSach");
         final String tenSach = extras.getString("tenSach");
@@ -105,6 +118,7 @@ public class XacNhanMuon extends AppCompatActivity {
             Intent iSubActivity01 = new Intent(XacNhanMuon.this, ThongBao.class);
             startActivity(iSubActivity01);
         });
+
     }
 
     @Override
@@ -151,7 +165,7 @@ public class XacNhanMuon extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<Borrow> call, Throwable t) {
-                Toast.makeText(XacNhanMuon.this, "Bạn đã mượn quyển này", Toast.LENGTH_SHORT).show();
+                Toast.makeText(XacNhanMuon.this, "Bạn đang mượn quyển này", Toast.LENGTH_SHORT).show();
                 Log.e("ERROR: ", t.getMessage());
             }
         });

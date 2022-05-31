@@ -35,6 +35,7 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_gioithieu.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_lichsu.xml" value="0.125" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_lichsu_test.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_muon.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_muon_2.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_taomkmoi.xml" value="0.2" />
@@ -63,6 +64,8 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/fragment_dangmuon.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/fragment_denhan.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/fragment_items.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/horizontal.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/horizontal_single_row.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/item_book.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/item_category.xml" value="0.17527173913043478" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/items_search.xml" value="0.17527173913043478" />

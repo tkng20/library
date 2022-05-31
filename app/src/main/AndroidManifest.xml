@@ -11,6 +11,10 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.Library">
         <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="test"/>
+        <activity
             android:name=".ChiTietSach"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"

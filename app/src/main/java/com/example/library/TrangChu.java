@@ -13,11 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.compose.material.icons.sharp.BoltKt;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.adapter.BookAdapter;
 import com.example.library.adapter.CategoryAdapter;
+import com.example.library.adapter.HomeAdapter;
 import com.example.library.model.Book;
 import com.example.library.model.Categories;
 import com.example.library.model.User;
@@ -35,27 +37,34 @@ import retrofit2.Response;
 public class TrangChu extends AppCompatActivity {
 
     TextView heyName;
-    APIService bookService;
+    static APIService bookService;
     CategoryAdapter categoryAdapter;
     RecyclerView rcv_cate;
     SharedPreferences sp;
     ImageView imageViewAvatar3;
-    APIService userService;
+    APIService service;
+    int id;
     public List<Categories> listCategories = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trangchu);
+        bookService = ApiUtils.getAPIService();
+        onBackPressed();
+
+
         ImageView imgProfile = (ImageView) findViewById(R.id.imgProfile);
         ImageView imgDSC = (ImageView) findViewById(R.id.imgTC_DanhSachCho);
         Button btnGiaHan = findViewById(R.id.btnTC_GiaHan);
         Button btnLichSu = findViewById(R.id.btnTC_LichSu);
         Button btnChoXacNhan = findViewById(R.id.btnTC_ChoXacNhan);
         Button btnTroGiup = findViewById(R.id.tc_TroGiup);
-        bookService = ApiUtils.getAPIService();
+        ImageView tc_btnHome = findViewById(R.id.tc_btnHome);
+        ImageView tc_btnNotice = findViewById(R.id.tc_btnNotice);
+        FloatingActionButton tc_btnDiscover = findViewById(R.id.tc_btnDiscover);
+        heyName = findViewById(R.id.name);
 
-        onBackPressed();
 
         imageViewAvatar3 = findViewById(R.id.imgProfile);
         sp=getSharedPreferences("credentials",MODE_PRIVATE);
@@ -66,47 +75,18 @@ public class TrangChu extends AppCompatActivity {
             imageViewAvatar3.setImageBitmap(decodedByte);
         }
 
-        int id = sp.getInt("id",0);
-        userService = ApiUtils.getAPIService();
-        Call<User> call = userService.getUser(id);
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response){
-                if(response.isSuccessful()) {
-                    final User user = response.body();
-                    if(user.getAvatar() != null) {
-                        byte[] decodedString = Base64.decode(user.getAvatar(), Base64.DEFAULT);
-                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                        imageViewAvatar3.setImageBitmap(decodedByte);
-                    }
-                }
-            }
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.e("ERROR: ", t.getMessage());
-            }
-        });
-
-        ImageView tc_btnHome = findViewById(R.id.tc_btnHome);
-        ImageView tc_btnNotice = findViewById(R.id.tc_btnNotice);
-        FloatingActionButton tc_btnDiscover = findViewById(R.id.tc_btnDiscover);
-
-        categoryAdapter = new CategoryAdapter(this);
-        rcv_cate = findViewById(R.id.rcv_category);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
-        rcv_cate.setLayoutManager(linearLayoutManager);
-        categoryAdapter.setData(getListCategory());
-        rcv_cate.setAdapter(categoryAdapter);
-
-        heyName = findViewById(R.id.name);
+        id = sp.getInt("id",0);
+        service = ApiUtils.getAPIService();
+        user();
+        getCategories();
         checkLogin();
+
 
         btnTroGiup.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TroGiup.class);
             startActivity(iSubActivity01);
             overridePendingTransition(0,0);
         });
-        // Handle click event
         imgProfile.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TrangCaNhan.class);
             startActivity(iSubActivity01);
@@ -143,6 +123,10 @@ public class TrangChu extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void checkLogin(){
         SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
         if(sp.contains("username") & !sp.contains("username_after")){
@@ -174,7 +158,47 @@ public class TrangChu extends AppCompatActivity {
         return listCategories;
     }
 
-    @Override
-    public void onBackPressed() {
+    public void getCategories()
+    {
+        Call<List<Categories>> call = bookService.getListCategories();
+        call.enqueue(new Callback<List<Categories>>() {
+            @Override
+            public void onResponse(Call<List<Categories>> call, Response<List<Categories>> response) {
+                if(response.isSuccessful()) {
+                    listCategories = response.body();
+                    categoryAdapter = new CategoryAdapter(TrangChu.this);
+                    rcv_cate = findViewById(R.id.rcv_category);
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(TrangChu.this,RecyclerView.VERTICAL,false);
+                    rcv_cate.setLayoutManager(linearLayoutManager);
+                    categoryAdapter.setData(listCategories);
+                    rcv_cate.setAdapter(categoryAdapter);
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Categories>> call, Throwable t) {
+                Log.e("ERROR: ", t.getMessage());
+            }
+        });
+    }
+
+    public void user(){
+        Call<User> call = service.getUser(id);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response){
+                if(response.isSuccessful()) {
+                    final User user = response.body();
+                    if(user.getAvatar() != null) {
+                        byte[] decodedString = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                        imageViewAvatar3.setImageBitmap(decodedByte);
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.e("ERROR: ", t.getMessage());
+            }
+        });
     }
 }
