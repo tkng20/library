@@ -1,7 +1,11 @@
 package com.example.library;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.library.adapter.BookAdapter;
 import com.example.library.model.Book;
+import com.example.library.model.User;
 import com.example.library.remote.APIService;
 import com.example.library.remote.ApiUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -45,6 +50,10 @@ public class DanhMucSach extends AppCompatActivity {
             "Số lượng mượn tăng dần",
             };
     TextView selection;
+    ImageView tc_Profile;
+    SharedPreferences sp;
+    APIService service;
+    int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,18 +62,18 @@ public class DanhMucSach extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        sp=getSharedPreferences("credentials",MODE_PRIVATE);
 
         selection =(TextView) findViewById(R.id.selection);
+        ImageView tc_btnHome = findViewById(R.id.dms_btnHome);
+        ImageView tc_btnNotice = findViewById(R.id.dms_btnNotice);
+        FloatingActionButton tc_btnDiscover = findViewById(R.id.dms_btnDiscover);
+        ImageView tc_Profile = findViewById(R.id.dms_Profile);
 
         listView = findViewById(R.id.listBook);
         bookService = ApiUtils.getAPIService();
 
         getBookList();
-
-        ImageView tc_btnHome = findViewById(R.id.dms_btnHome);
-        ImageView tc_btnNotice = findViewById(R.id.dms_btnNotice);
-        FloatingActionButton tc_btnDiscover = findViewById(R.id.dms_btnDiscover);
-        ImageView tc_Profile = findViewById(R.id.dms_Profile);
 
 
         tc_btnHome.setOnClickListener(view -> {
@@ -166,4 +175,5 @@ public class DanhMucSach extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

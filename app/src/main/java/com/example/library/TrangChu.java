@@ -1,5 +1,6 @@
 package com.example.library;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -7,19 +8,20 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.compose.material.icons.sharp.BoltKt;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.adapter.BookAdapter;
 import com.example.library.adapter.CategoryAdapter;
-import com.example.library.adapter.HomeAdapter;
+import com.example.library.adapter.HorizontalAdapter;
+import com.example.library.adapter.MainAdapter;
 import com.example.library.model.Book;
 import com.example.library.model.Categories;
 import com.example.library.model.User;
@@ -34,40 +36,45 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TrangChu extends AppCompatActivity {
+public class TrangChu extends AppCompatActivity{
 
     TextView heyName;
-    static APIService bookService;
+    APIService bookService;
     CategoryAdapter categoryAdapter;
     RecyclerView rcv_cate;
     SharedPreferences sp;
     ImageView imageViewAvatar3;
     APIService service;
     int id;
-    public List<Categories> listCategories = new ArrayList<>();
+    List<Categories> listCategories = new ArrayList<>();
+    ListView listView;
+
+    RecyclerView bookRecycler;
+    RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trangchu);
         bookService = ApiUtils.getAPIService();
+        sp=getSharedPreferences("credentials",MODE_PRIVATE);
         onBackPressed();
-
 
         ImageView imgProfile = (ImageView) findViewById(R.id.imgProfile);
         ImageView imgDSC = (ImageView) findViewById(R.id.imgTC_DanhSachCho);
         Button btnGiaHan = findViewById(R.id.btnTC_GiaHan);
-        Button btnLichSu = findViewById(R.id.btnTC_LichSu);
+        Button btnYeuThich = findViewById(R.id.btnTC_YeuThich);
         Button btnChoXacNhan = findViewById(R.id.btnTC_ChoXacNhan);
         Button btnTroGiup = findViewById(R.id.tc_TroGiup);
         ImageView tc_btnHome = findViewById(R.id.tc_btnHome);
         ImageView tc_btnNotice = findViewById(R.id.tc_btnNotice);
         FloatingActionButton tc_btnDiscover = findViewById(R.id.tc_btnDiscover);
+        Button tc_Search = findViewById(R.id.searchMain);
         heyName = findViewById(R.id.name);
-
-
         imageViewAvatar3 = findViewById(R.id.imgProfile);
-        sp=getSharedPreferences("credentials",MODE_PRIVATE);
+
+        categoryAdapter = new CategoryAdapter(TrangChu.this);
+        rcv_cate = findViewById(R.id.rcv_category);
 
         if(!sp.getString("dp","").equals("")){
             byte[] decodedString = Base64.decode(sp.getString("dp", ""), Base64.DEFAULT);
@@ -78,9 +85,13 @@ public class TrangChu extends AppCompatActivity {
         id = sp.getInt("id",0);
         service = ApiUtils.getAPIService();
         user();
-        getCategories();
         checkLogin();
+        getCategories();
 
+        tc_Search.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(),Search.class));
+            overridePendingTransition(0,0);
+        });
 
         btnTroGiup.setOnClickListener(view -> {
             Intent iSubActivity01 = new Intent(TrangChu.this, TroGiup.class);
@@ -97,8 +108,8 @@ public class TrangChu extends AppCompatActivity {
             startActivity(iSubActivity01);
             overridePendingTransition(0,0);
         });
-        btnLichSu.setOnClickListener(view -> {
-            Intent iSubActivity01 = new Intent(TrangChu.this, Lichsu.class);
+        btnYeuThich.setOnClickListener(view -> {
+            Intent iSubActivity01 = new Intent(TrangChu.this, DanhSachYeuThich.class);
             startActivity(iSubActivity01);
             overridePendingTransition(0,0);
         });
@@ -165,13 +176,15 @@ public class TrangChu extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Categories>> call, Response<List<Categories>> response) {
                 if(response.isSuccessful()) {
-                    listCategories = response.body();
+                    listCategories.clear();
+                    listCategories.addAll(response.body());
                     categoryAdapter = new CategoryAdapter(TrangChu.this);
                     rcv_cate = findViewById(R.id.rcv_category);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(TrangChu.this,RecyclerView.VERTICAL,false);
                     rcv_cate.setLayoutManager(linearLayoutManager);
                     categoryAdapter.setData(listCategories);
                     rcv_cate.setAdapter(categoryAdapter);
+//                    listView.setAdapter(new BookAdapter(TrangChu.this, R.layout.list_book, response.body().get(1).getBooks()));
                 }
             }
             @Override

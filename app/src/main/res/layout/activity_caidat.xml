@@ -6,59 +6,57 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/white">
 
-    <EditText
-        android:id="@+id/editSearch"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/round_backrough"
-        android:backgroundTint="@color/timkiem"
-        android:drawableStart="@drawable/ic_vector"
-
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Tìm kiếm"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:padding="5dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="50dp"
-
-
-        app:layout_constraintEnd_toEndOf="@id/tvName"
-
-        app:layout_constraintHorizontal_bias="0.444"
-        tools:layout_editor_absoluteY="90dp" />
-
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-
-        android:layout_below="@id/editSearch"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="-16dp"
         android:background="@drawable/round_day" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/profile"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="67dp"-->
+<!--        android:layout_below="@+id/view2"-->
+<!--        android:layout_marginStart="80dp"-->
+<!--        android:layout_marginTop="13dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:text="HaLinh"-->
+<!--        android:textColor="@color/blue_dam"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cd_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/avatar" />
+
+    <TextView
         android:id="@+id/profile"
-        android:layout_width="match_parent"
-        android:layout_height="67dp"
-        android:layout_below="@+id/view2"
-        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="66dp"
         android:background="#FFFFFF"
-        android:drawableStart="@mipmap/avatas_foreground"
         android:text="HaLinh"
         android:textColor="@color/blue_dam"
         android:textSize="20sp"
-        android:textStyle="bold">
-
-    </androidx.appcompat.widget.AppCompatButton>
+        android:textStyle="bold"></TextView>
 
     <View
         android:id="@+id/view"
@@ -117,26 +115,10 @@
         android:layout_alignBottom="@id/view2"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="-580dp"
-        android:background="#3E70F7"
-
-        >
+        android:background="#fff">
 
     </androidx.appcompat.widget.AppCompatButton>
 
-    <androidx.appcompat.widget.AppCompatButton
-
-        android:id="@+id/button7"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@id/view2"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="-580dp"
-        android:background="#3E70F7"
-
-
-        >
-
-    </androidx.appcompat.widget.AppCompatButton>
 
     <androidx.appcompat.widget.AppCompatButton
 
@@ -178,7 +160,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/btnCaiDatNhacNho"
         android:layout_alignBottom="@+id/button7"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="285dp"

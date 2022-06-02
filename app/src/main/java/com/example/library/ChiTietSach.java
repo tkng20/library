@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.example.library.adapter.BookAdapter;
 import com.example.library.adapter.BookBorrow_CXN_Adapter;
@@ -47,7 +50,7 @@ public class ChiTietSach extends AppCompatActivity {
     APIService userService;
     int id_user;
     int id_book;
-    Switch change;
+    ToggleButton heart;
     public int id_favorite;
     List<Favorite> list = new ArrayList<>();
 
@@ -61,6 +64,7 @@ public class ChiTietSach extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        actionBar.setBackgroundDrawable (new ColorDrawable(Color.parseColor ("#4977F3")));
 
         Button btnMuonSach = (Button) findViewById(id.cts_muonSach);
         TextView title = findViewById(id.tensach);
@@ -71,7 +75,7 @@ public class ChiTietSach extends AppCompatActivity {
         TextView publish_date = findViewById(id.ngayxb);
         TextView des = findViewById(id.mota);
         ImageView image = findViewById(id.imageBook);
-        change = findViewById(id.switch1);
+        heart = findViewById(id.heartButton);
 
         Bundle extras = getIntent().getExtras();
         final String tenSach = extras.getString("tenSach");
@@ -98,28 +102,21 @@ public class ChiTietSach extends AppCompatActivity {
         id_user = sp.getInt("id", 0);
 
         // Handle click event
-        btnMuonSach.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChiTietSach.this, Muon.class);
-                intent.putExtra("tenSach", tenSach);
-                intent.putExtra("maSach", maSach);
-                startActivity(intent);
-            }
+        btnMuonSach.setOnClickListener(view -> {
+            Intent intent = new Intent(ChiTietSach.this, Muon.class);
+            intent.putExtra("tenSach", tenSach);
+            intent.putExtra("maSach", maSach);
+            startActivity(intent);
         });
 
         getFavorite();
 
-        change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(change.isChecked()){
-                    favorite(id_user,id_book);
-                }
-                else unfavorite();
+        heart.setOnClickListener(view -> {
+            if(heart.isChecked()){
+                favorite(id_user,id_book);
             }
+            else unfavorite();
         });
-
     }
 
     @Override
@@ -137,7 +134,6 @@ public class ChiTietSach extends AppCompatActivity {
             public void onResponse(Call<Favorite> call, Response<Favorite> response) {
                 // this method is called when we get response from our api.
                 if(response.isSuccessful()) {
-                    change.setChecked(true);
                     Toast.makeText(ChiTietSach.this, "Đã thích", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -154,7 +150,7 @@ public class ChiTietSach extends AppCompatActivity {
             public void onResponse(Call<Favorite> call, Response<Favorite> response) {
                 // this method is called when we get response from our api.
                 if(response.isSuccessful()) {
-                    change.setChecked(false);
+                    heart.setChecked(false);
                     Toast.makeText(ChiTietSach.this, "Bỏ thích", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -176,8 +172,7 @@ public class ChiTietSach extends AppCompatActivity {
                     for (int i =0; i< list.size();i++){
                         if(list.get(i).getUser_id()==id_user & list.get(i).getBook_id()==id_book) {
                             id_favorite = list.get(i).getId();
-                            change.setChecked(true);
-//                            unfavorite();
+                            heart.setChecked(true);
                             break;
                         }
                     }

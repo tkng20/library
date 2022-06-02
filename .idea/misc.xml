@@ -11,16 +11,23 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_back.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_eye.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_eye_off.xml" value="0.187" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_fav.xml" value="0.17" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_heart.xml" value="0.187" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_heart_off.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/ic_search.xml" value="0.165" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/line_bg_blue.xml" value="0.118" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/line_bg_green.xml" value="0.118" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/line_bg_yellow.xml" value="0.118" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/lock_background.xml" value="0.118" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/round_bg_green.xml" value="0.165" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/search_xam.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/statusshadow.xml" value="0.2075" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/switch_thumb.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/switch_track.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/tim_foreground.xml" value="0.187" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/toggle_background.xml" value="0.187" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/drawable/viewmore_shadow.xml" value="0.165" />
-        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_caidat.xml" value="0.2" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_caidat.xml" value="0.22" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_caidatnhacnho.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_chitietsach.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_dangky.xml" value="0.2" />
@@ -41,10 +48,10 @@
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_taomkmoi.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_thongbao.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_thongtincanhan.xml" value="0.1331521739130435" />
-        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangcanhan.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangcanhan.xml" value="0.22" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu2.xml" value="0.17527173913043478" />
-        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu_goc.xml" value="0.1331521739130435" />
+        <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_trangchu_goc.xml" value="0.27883650952858574" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhangiahan.xml" value="0.2" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhanmuon.xml" value="0.1331521739130435" />
         <entry key="..\:/KimNgan/UIT/MOBILE/Project/Final/app/src/main/res/layout/activity_xacnhanmuon2.xml" value="0.14666666666666667" />

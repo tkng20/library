@@ -59,8 +59,11 @@ public class ThongTinCaNhan extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
         int id = sp.getInt("id",0);
-        if(sp.contains("id")){
-            name.setText(String.valueOf(id));
+        if(sp.contains("username") & !sp.contains("username_after")){
+            name.setText(sp.getString("username",""));
+        }
+        else if (sp.contains("username_after")){
+            name.setText(sp.getString("username_after",""));
         }
 
         userService = ApiUtils.getAPIService();

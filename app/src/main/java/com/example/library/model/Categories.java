@@ -6,14 +6,15 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Categories {
-
     private String tenTheLoai;
-    private List<BookResponse> book;
+//    private List<BookResponse> book;
+    private List<Book> book;
+
 
     public Categories() {
     }
 
-    public Categories(String tenTheLoai, List<BookResponse> books) {
+    public Categories(String tenTheLoai, List<Book> books) {
         this.tenTheLoai = tenTheLoai;
         this.book = books;
     }
@@ -26,11 +27,11 @@ public class Categories {
         this.tenTheLoai = tenTheLoai;
     }
 
-    public List<BookResponse> getBooks() {
+    public List<Book> getBooks() {
         return book;
     }
 
-    public void setBooks(List<BookResponse> books) {
+    public void setBooks(List<Book> books) {
         this.book = books;
     }
 }

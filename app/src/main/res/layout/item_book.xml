@@ -28,11 +28,11 @@
                 app:srcCompat="@mipmap/bookss" />
 
             <TextView
-                android:id="@+id/tc_theLoai"
+                android:id="@+id/tc_TacGia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
-                android:text="Sách kỹ năng"
+                android:text="Tác giả"
                 android:translationY="130dp" />
 
             <TextView

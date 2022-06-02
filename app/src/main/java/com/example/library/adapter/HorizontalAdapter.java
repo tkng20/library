@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.ChiTietSach;
@@ -18,72 +19,87 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
+public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.PhoneViewHold> {
 
-    private ArrayList<Book> data = new ArrayList<>();
-    private int id,cate_id;
-    private String tenSach,tacGia,theLoai,soLuong,soTrang,ngayXB,moTa;
+    ArrayList<Book> phoneLaocations;
+    final private ListItemClickListener mOnClickListener;
+    private int id;
+    private String tenSach,tacGia,theLoai,soLuong,soTrang,ngayXB,moTa,image;
 
-        public HorizontalAdapter(ArrayList<Book> data) {
-            this.data = data;
+    public HorizontalAdapter(ArrayList<Book> phoneLaocations, ListItemClickListener listener) {
+        this.phoneLaocations = phoneLaocations;
+        mOnClickListener = listener;
+    }
+
+    @NonNull
+    @Override
+    public PhoneViewHold onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book, parent, false);
+        return new PhoneViewHold(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PhoneViewHold holder, int position) {
+
+
+        Book phonehelper = phoneLaocations.get(position);
+
+        id = phonehelper.getId();
+        tacGia = phonehelper.getTacGia();
+        soLuong = phonehelper.getSoLuong();
+        soTrang = phonehelper.getSoTrang();
+        theLoai = phonehelper.getCategories().getTenTheLoai();
+        ngayXB = phonehelper.getNgayXB();
+        moTa = phonehelper.getMoTa();
+        image = phonehelper.getImage();
+
+        holder.tv_tenSach.setText(phonehelper.getTenSach());
+        holder.tv_theLoai.setText(phonehelper.getTacGia());
+        holder.imageView.setImageResource(R.drawable.sach2);
+    }
+
+    @Override
+    public int getItemCount() {
+        return phoneLaocations.size();
+
+    }
+
+    public interface ListItemClickListener {
+        void onphoneListClick(int clickedItemIndex);
+    }
+
+    public class PhoneViewHold extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        private ImageView imageView;
+        private TextView tv_tenSach,tv_theLoai;
+
+        public PhoneViewHold(@NonNull View itemView) {
+            super(itemView);
+            itemView.setOnClickListener(this);
+            //hooks
+            imageView = itemView.findViewById(R.id.tc_imageBook);
+            tv_tenSach = itemView.findViewById(R.id.tc_tenSach);
+            tv_theLoai = itemView.findViewById(R.id.tc_TacGia);
+            imageView.setOnClickListener(view -> {
+                Intent intent = new Intent(view.getContext(), ChiTietSach.class);
+                        intent.putExtra("book_id",id);
+                        intent.putExtra("tenSach",tenSach);
+                        intent.putExtra("tacGia",tacGia);
+                        intent.putExtra("theLoai","test");
+                        intent.putExtra("soLuong",soLuong);
+                        intent.putExtra("soTrang",soTrang);
+                        intent.putExtra("ngayXB",ngayXB);
+                        intent.putExtra("moTa",moTa);
+                        intent.putExtra("image",image);
+                        view.getContext().startActivity(intent);
+            });
         }
 
         @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.horizontal_single_row, parent, false);
-            return new MyViewHolder(view);
+        public void onClick(View v) {
+            int clickedPosition = getAdapterPosition();
+            mOnClickListener.onphoneListClick(clickedPosition);
         }
-
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
-
-            id = data.get(position).getId();
-            tenSach= data.get(position).getTenSach();
-            tacGia =data.get(position).getTacGia();
-            theLoai = data.get(position).getCategories().getTenTheLoai();
-            soLuong = data.get(position).getSoLuong();
-            soTrang = data.get(position).getSoTrang();
-            ngayXB = data.get(position).getNgayXB();
-            moTa = data.get(position).getMoTa();
-
-            holder.description.setText(data.get(position).getCategories().getTenTheLoai());
-            holder.title.setText(data.get(position).getTenSach());
-            holder.pubDate.setText(data.get(position).getNgayXB());
-//            Picasso.with(this).load("http://3.0.59.80/test/public/public/storage/"+data.get(position).getImage()).into(holder.image);
-
-            holder.image.setImageResource(R.drawable.sach2);
-        }
-
-        @Override
-        public int getItemCount() {
-            return data.size();
-        }
-
-        public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView title, description, pubDate;
-            ImageView image;
-
-            public MyViewHolder(View itemView) {
-                super(itemView);
-                title = (TextView) itemView.findViewById(R.id.title);
-                description = (TextView) itemView.findViewById(R.id.description);
-                pubDate = (TextView) itemView.findViewById(R.id.published_date);
-                image = (ImageView) itemView.findViewById(R.id.image_view);
-                // truyền dữ liệu sang chi tiết sách
-                itemView.setOnClickListener(view -> {
-                    Intent intent = new Intent(view.getContext(), ChiTietSach.class);
-                    intent.putExtra("book_id",id);
-                    intent.putExtra("tenSach",tenSach);
-                    intent.putExtra("tacGia",tacGia);
-                    intent.putExtra("theLoai",theLoai);
-                    intent.putExtra("soLuong",soLuong);
-                    intent.putExtra("soTrang",soTrang);
-                    intent.putExtra("ngayXB",ngayXB);
-                    intent.putExtra("moTa",moTa);
-                    view.getContext().startActivity(intent);
-                });
-
-            }
-        }
+    }
 }
 

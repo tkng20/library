@@ -136,7 +136,7 @@ public class XacNhanMuon extends AppCompatActivity {
 
     public void onClick(View view) {
         MaterialAlertDialogBuilder test = new MaterialAlertDialogBuilder(this);
-        test.setTitle("Xác nhận gia hạn")
+        test.setTitle("Xác nhận mượn")
                 .setMessage("Bạn sẽ đến lấy vào ngày "+date)
                 .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                     @Override

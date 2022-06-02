@@ -9,22 +9,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal">
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:thumbTint="@drawable/switch_thumb"
-            app:trackTint="@drawable/switch_track">
-        </Switch>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="215dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -39,15 +25,19 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <View
-                android:id="@+id/viewheart"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+            <ToggleButton
+                android:id="@+id/heartButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/ic_heart" />
+                android:background="@drawable/toggle_background"
+                android:text="ToggleButton"
+                android:textOff=""
+                android:textOn="" />
+
 
             <TableLayout
                 android:id="@+id/tb2"
@@ -125,7 +115,7 @@
                 android:id="@+id/tb1"
                 android:layout_width="163dp"
                 android:layout_height="100dp"
-                android:layout_below="@+id/viewheart"
+                android:layout_below="@+id/heartButton"
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
                 android:stretchColumns="*">

@@ -23,6 +23,7 @@
             android:layout_marginStart="142dp"
             android:layout_marginTop="334dp"
             android:ems="10"
+            android:focusable="false"
             android:inputType="textPersonName"
             android:text="halinhtt1903@gmail.com"
             android:textSize="14sp"
@@ -132,9 +133,10 @@
             android:layout_width="match_parent"
             android:layout_height="117dp"
             android:adjustViewBounds="false"
-            android:background="#3E70F7"
+            android:background="#F3F0F0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/logo_foreground"  />
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imageViewAvatar"-->

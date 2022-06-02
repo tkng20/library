@@ -26,11 +26,10 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
     private Context context;
     private int id,theLoai;
     private String tenSach,tacGia,soLuong,soTrang,ngayXB,moTa,image;
-    public void setData(@NonNull Context context, @LayoutRes int resource,@NonNull List<BookResponse> list){
-//        super(context, resource, list);
+    public void setData(@NonNull Context context,List<BookResponse> list){
+        this.context=context;
         this.mBooks = list;
-        this.context = context;
-//        notifyDataSetChanged();
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -41,7 +40,7 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Book2ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Book2ViewHolder holder, final int position) {
         BookResponse book = mBooks.get(position);
         if(book == null){
             return;
@@ -58,7 +57,7 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
             image = book.getImage();
         }
         holder.tv_tenSach.setText(book.getTenSach());
-        holder.tv_theLoai.setText(String.valueOf(book.getCategories_id()));
+        holder.tv_theLoai.setText(book.getTacGia());
         Picasso.with(context).load("http://3.0.59.80/test/public/public/storage/"+image).into(holder.imageView);
     }
 
@@ -79,7 +78,7 @@ public class MainAdapter2 extends RecyclerView.Adapter<MainAdapter2.Book2ViewHol
             super(itemView);
             imageView = itemView.findViewById(R.id.tc_imageBook);
             tv_tenSach = itemView.findViewById(R.id.tc_tenSach);
-            tv_theLoai = itemView.findViewById(R.id.tc_theLoai);
+            tv_theLoai = itemView.findViewById(R.id.tc_TacGia);
             imageView.setOnClickListener(view -> {
                 Intent intent = new Intent(view.getContext(), ChiTietSach.class);
                 intent.putExtra("book_id",id);

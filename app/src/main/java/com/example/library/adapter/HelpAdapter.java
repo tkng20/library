@@ -24,9 +24,9 @@ public class HelpAdapter extends PagerAdapter {
     //Array
     public int[] slide_images = {
         R.drawable.slide1,
-        R.drawable.slide1,
-        R.drawable.slide1,
-        R.drawable.slide1
+        R.drawable.giahan,
+        R.drawable.muonsach,
+        R.drawable.quydinh
     };
 
     public String[] slide_headings = {
@@ -63,7 +63,7 @@ public class HelpAdapter extends PagerAdapter {
         ImageView slideImageView = (ImageView) view.findViewById((R.id.slide_image));
         TextView slideHeading = (TextView) view.findViewById((R.id.slide_heading));
         TextView slideDescription = (TextView) view.findViewById((R.id.slide_desc));
-        slideImageView.setImageResource(R.drawable.slide1);
+        slideImageView.setImageResource(slide_images[position]);
         slideHeading.setText(slide_headings[position]);
         slideDescription.setText(slide_descs[position]);
         container.addView(view);

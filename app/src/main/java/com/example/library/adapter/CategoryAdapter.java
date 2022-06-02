@@ -42,7 +42,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryViewHolder holder,final int position) {
         Categories categories = mListCategories.get(position);
         if(categories == null){
             return;
@@ -50,11 +50,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext,RecyclerView.HORIZONTAL,false);
         holder.rcvBook.setLayoutManager(linearLayoutManager);
-
         holder.tvNameCategory.setText(categories.getTenTheLoai());
-        MainAdapter2 bookAdapter2 = new MainAdapter2();
-        bookAdapter2.setData(mContext,R.layout.item_category,categories.getBooks());
-        holder.rcvBook.setAdapter(bookAdapter2);
+        MainAdapter bookAdapter = new MainAdapter();
+        bookAdapter.setData(mContext,categories.getBooks());
+        holder.rcvBook.setAdapter(bookAdapter);
     }
 
     @Override

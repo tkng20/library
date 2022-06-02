@@ -169,7 +169,7 @@ public class ChinhSua extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Intent iSubActivity01 = new Intent(ChinhSua.this, ThongTinCaNhan.class);
+                            Intent iSubActivity01 = new Intent(ChinhSua.this, TrangCaNhan.class);
                             startActivity(iSubActivity01);
                         }
                     }, 50);

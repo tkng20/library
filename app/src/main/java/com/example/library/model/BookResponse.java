@@ -4,40 +4,40 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class BookResponse {
-    @SerializedName("id")
-    @Expose
+//    @SerializedName("id")
+//    @Expose
     private int id;
 
-    @SerializedName("tenSach")
-    @Expose
+//    @SerializedName("tenSach")
+//    @Expose
     private String tenSach;
 
-    @SerializedName("tacGia")
-    @Expose
+//    @SerializedName("tacGia")
+//    @Expose
     private String tacGia;
 
-    @SerializedName("categories_id")
-    @Expose
+//    @SerializedName("categories_id")
+//    @Expose
     private int categories_id;
 
-    @SerializedName("soLuong")
-    @Expose
+//    @SerializedName("soLuong")
+//    @Expose
     private String soLuong;
 
-    @SerializedName("soTrang")
-    @Expose
+//    @SerializedName("soTrang")
+//    @Expose
     private String soTrang;
 
-    @SerializedName("ngayXB")
-    @Expose
+//    @SerializedName("ngayXB")
+//    @Expose
     private String ngayXB;
 
-    @SerializedName("moTa")
-    @Expose
+//    @SerializedName("moTa")
+//    @Expose
     private String moTa;
 
-    @SerializedName("image")
-    @Expose
+//    @SerializedName("image")
+//    @Expose
     private String image;
 
     public BookResponse(){}

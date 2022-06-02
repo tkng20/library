@@ -143,9 +143,10 @@
             android:layout_width="match_parent"
             android:layout_height="117dp"
             android:adjustViewBounds="false"
-            android:background="#3E70F7"
+            android:background="#F3F0F0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/logo_foreground" />
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/imageViewAvatar2"

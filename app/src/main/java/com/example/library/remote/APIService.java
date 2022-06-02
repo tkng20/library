@@ -149,4 +149,7 @@ public interface APIService {
 // categories
     @GET("api/categories")
     Call<List<Categories>> getListCategories();
+
+    @GET("api/books/{id}")
+    Call<Book> getBook(@Path("id") int id);
 }

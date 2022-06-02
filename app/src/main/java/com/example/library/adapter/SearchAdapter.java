@@ -55,7 +55,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SearchViewHolder holder,final int position) {
         Book books = mListBooks.get(position);
         id = books.getId();
         tacGia = books.getTacGia();
@@ -69,6 +69,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             return;
         }
         holder.tenSach.setText(books.getTenSach());
+        holder.tv_theLoai.setText(theLoai);
+        holder.tv_soLuong.setText(soLuong);
         Picasso.with(context).load("http://3.0.59.80/test/public/public/storage/"+image).into(holder.anhSach);
     }
 
@@ -82,11 +84,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     public class SearchViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView tenSach;
+        private TextView tenSach, tv_theLoai, tv_soLuong;
         private ImageView anhSach;
         public SearchViewHolder(@NonNull View itemView) {
             super(itemView);
             tenSach= itemView.findViewById(R.id.tenSach);
+            tv_theLoai= itemView.findViewById(R.id.theLoai);
+            tv_soLuong = itemView.findViewById(R.id.soLuong);
             anhSach= itemView.findViewById(R.id.anhSach);
             anhSach.setOnClickListener(view -> {
                 Intent intent = new Intent(view.getContext(), ChiTietSach.class);
@@ -111,7 +115,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String strSearch = charSequence.toString();
                 if(strSearch.isEmpty()){
-                    mListBooks = mListBooksOld;
+//                    mListBooks = mListBooksOld;
                 } else {
                     List<Book> list = new ArrayList<>();
                     for(Book book : mListBooksOld){
